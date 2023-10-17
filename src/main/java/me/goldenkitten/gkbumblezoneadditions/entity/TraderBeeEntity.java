@@ -145,6 +145,11 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant {
     }
 
     @Override
+    public float getFlyingSpeed() {
+        return super.getFlyingSpeed();
+    }
+
+    @Override
     public void overrideOffers(@NotNull MerchantOffers newOffers) {
 
     }
