@@ -14108,3 +14108,5 @@
 /gradle/wrapper/gradle-wrapper.jar
 /gradle/wrapper/gradle-wrapper.properties
 /run/
+/run/crash-reports/
+/run/logs/
