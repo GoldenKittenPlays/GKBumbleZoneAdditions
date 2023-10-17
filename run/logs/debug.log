@@ -1,0 +1,331 @@
+[16Oct2023 20:33:03.711] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 5, --assetsDir, C:\Users\Maste\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.1.3, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mixin.config, gkbumblezoneadditions.mixins.json]
+[16Oct2023 20:33:03.716] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.2 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[16Oct2023 20:33:03.753] [main/DEBUG] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Found launch services [fmlclientdev,forgeclient,minecraft,forgegametestserverdev,fmlserveruserdev,fmlclient,fmldatauserdev,forgeserverdev,forgeserveruserdev,forgeclientdev,forgeclientuserdev,forgeserver,forgedatadev,fmlserver,fmlclientuserdev,fmlserverdev,forgedatauserdev,testharness,forgegametestserveruserdev]
+[16Oct2023 20:33:03.768] [main/DEBUG] [cpw.mods.modlauncher.NameMappingServiceHandler/MODLAUNCHER]: Found naming services : [srgtomcp]
+[16Oct2023 20:33:03.786] [main/DEBUG] [cpw.mods.modlauncher.LaunchPluginHandler/MODLAUNCHER]: Found launch plugins: [mixin,eventbus,slf4jfixer,object_holder_definalize,runtime_enum_extender,capability_token_subclass,accesstransformer,runtimedistcleaner]
+[16Oct2023 20:33:03.799] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Discovering transformation services
+[16Oct2023 20:33:03.805] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path GAMEDIR is G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\run
+[16Oct2023 20:33:03.806] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path MODSDIR is G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\run\mods
+[16Oct2023 20:33:03.806] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path CONFIGDIR is G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\run\config
+[16Oct2023 20:33:03.806] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path FMLCONFIG is G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\run\config\fml.toml
+[16Oct2023 20:33:03.886] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Found additional transformation services from discovery services: 
+[16Oct2023 20:33:03.893] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[16Oct2023 20:33:03.991] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[16Oct2023 20:33:04.154] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
+[16Oct2023 20:33:04.219] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Found transformer services : [mixin,fml]
+[16Oct2023 20:33:04.219] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Transformation services loading
+[16Oct2023 20:33:04.221] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Loading service mixin
+[16Oct2023 20:33:04.221] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Loaded service mixin
+[16Oct2023 20:33:04.221] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Loading service fml
+[16Oct2023 20:33:04.223] [main/DEBUG] [net.minecraftforge.fml.loading.LauncherVersion/CORE]: Found FMLLauncher version 1.0
+[16Oct2023 20:33:04.224] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: FML 1.0 loading
+[16Oct2023 20:33:04.224] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: FML found ModLauncher version : 10.0.9+10.0.9+main.dcd20f30
+[16Oct2023 20:33:04.224] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: FML found AccessTransformer version : 8.0.4+66+master.c09db6d7
+[16Oct2023 20:33:04.225] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: FML found EventBus version : 6.0.5+6.0.5+master.eb8e549b
+[16Oct2023 20:33:04.225] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: Found Runtime Dist Cleaner
+[16Oct2023 20:33:04.228] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: FML found CoreMod version : 5.0.1+15+master.dc5a2922
+[16Oct2023 20:33:04.230] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: Found ForgeSPI package implementation version 7.0.1+7.0.1+master.d2b38bf6
+[16Oct2023 20:33:04.230] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: Found ForgeSPI package specification 5
+[16Oct2023 20:33:04.230] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Loaded service fml
+[16Oct2023 20:33:04.231] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Configuring option handling for services
+[16Oct2023 20:33:04.238] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Transformation services initializing
+[16Oct2023 20:33:04.238] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Initializing transformation service mixin
+[16Oct2023 20:33:04.255] [main/DEBUG] [mixin/]: MixinService [ModLauncher] was successfully booted in cpw.mods.cl.ModuleClassLoader@17046283
+[16Oct2023 20:33:04.273] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Maste/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[16Oct2023 20:33:04.275] [main/DEBUG] [mixin/]: Initialising Mixin Platform Manager
+[16Oct2023 20:33:04.276] [main/DEBUG] [mixin/]: Adding mixin platform agents for container ModLauncher Root Container(ModLauncher:4f56a0a2)
+[16Oct2023 20:33:04.276] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentMinecraftForge for ModLauncher Root Container(ModLauncher:4f56a0a2)
+[16Oct2023 20:33:04.277] [main/DEBUG] [mixin/]: MixinPlatformAgentMinecraftForge rejected container ModLauncher Root Container(ModLauncher:4f56a0a2)
+[16Oct2023 20:33:04.277] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentDefault for ModLauncher Root Container(ModLauncher:4f56a0a2)
+[16Oct2023 20:33:04.277] [main/DEBUG] [mixin/]: MixinPlatformAgentDefault accepted container ModLauncher Root Container(ModLauncher:4f56a0a2)
+[16Oct2023 20:33:04.279] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Initialized transformation service mixin
+[16Oct2023 20:33:04.279] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Initializing transformation service fml
+[16Oct2023 20:33:04.279] [main/DEBUG] [net.minecraftforge.fml.loading.FMLServiceProvider/CORE]: Setting up basic FML game directories
+[16Oct2023 20:33:04.279] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path GAMEDIR is G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\run
+[16Oct2023 20:33:04.281] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path MODSDIR is G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\run\mods
+[16Oct2023 20:33:04.281] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path CONFIGDIR is G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\run\config
+[16Oct2023 20:33:04.281] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path FMLCONFIG is G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\run\config\fml.toml
+[16Oct2023 20:33:04.281] [main/DEBUG] [net.minecraftforge.fml.loading.FMLServiceProvider/CORE]: Loading configuration
+[16Oct2023 20:33:04.283] [main/DEBUG] [net.minecraftforge.fml.loading.FMLServiceProvider/CORE]: Preparing ModFile
+[16Oct2023 20:33:04.285] [main/DEBUG] [net.minecraftforge.fml.loading.FMLServiceProvider/CORE]: Preparing launch handler
+[16Oct2023 20:33:04.286] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: Using forgeclientuserdev as launch service
+[16Oct2023 20:33:04.299] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: Received command line version data  : VersionInfo[forgeVersion=47.1.3, mcVersion=1.20.1, mcpVersion=20230612.114412, forgeGroup=net.minecraftforge]
+[16Oct2023 20:33:04.301] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Initialized transformation service fml
+[16Oct2023 20:33:04.302] [main/DEBUG] [cpw.mods.modlauncher.NameMappingServiceHandler/MODLAUNCHER]: Current naming domain is 'mcp'
+[16Oct2023 20:33:04.302] [main/DEBUG] [cpw.mods.modlauncher.NameMappingServiceHandler/MODLAUNCHER]: Identified name mapping providers {srg=srgtomcp:1234}
+[16Oct2023 20:33:04.302] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Transformation services begin scanning
+[16Oct2023 20:33:04.304] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Beginning scan trigger - transformation service mixin
+[16Oct2023 20:33:04.305] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: End scan trigger - transformation service mixin
+[16Oct2023 20:33:04.305] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Beginning scan trigger - transformation service fml
+[16Oct2023 20:33:04.305] [main/DEBUG] [net.minecraftforge.fml.loading.FMLServiceProvider/CORE]: Initiating mod scan
+[16Oct2023 20:33:04.312] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 3070 Laptop GPU/PCIe/SSE2 GL version 4.6.0 NVIDIA 537.58, NVIDIA Corporation
+[16Oct2023 20:33:04.315] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModListHandler/CORE]: Found mod coordinates from lists: []
+[16Oct2023 20:33:04.318] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/CORE]: Found Mod Locators : (mods folder:null),(maven libs:null),(exploded directory:null),(minecraft:null),(userdev classpath:null)
+[16Oct2023 20:33:04.318] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/CORE]: Found Dependency Locators : (JarInJar:null)
+[16Oct2023 20:33:04.331] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\run\mods\the_bumblezone-7.0.17+1.20.1-forge.jar
+[16Oct2023 20:33:04.378] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file the_bumblezone-7.0.17+1.20.1-forge.jar with {the_bumblezone} mods - versions {7.0.17+1.20.1-forge}
+[16Oct2023 20:33:04.383] [main/DEBUG] [net.minecraftforge.fml.loading.targets.CommonLaunchHandler/CORE]: Got mod coordinates gkbumblezoneadditions%%G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\build\resources\main;gkbumblezoneadditions%%G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\build\classes\java\main from env
+[16Oct2023 20:33:04.384] [main/DEBUG] [net.minecraftforge.fml.loading.targets.CommonLaunchHandler/CORE]: Found supplied mod coordinates [{gkbumblezoneadditions=[G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\build\resources\main, G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\build\classes\java\main]}]
+[16Oct2023 20:33:04.587] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file forge-1.20.1-47.1.3_mapped_official_1.20.1-recomp.jar with {minecraft} mods - versions {1.20.1}
+[16Oct2023 20:33:04.591] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate C:\Users\Maste\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.1.3\9775dc3f284cdb3e0d33b372c328c6ef88e434b0\javafmllanguage-1.20.1-47.1.3.jar
+[16Oct2023 20:33:04.591] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Maste\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.1.3\9775dc3f284cdb3e0d33b372c328c6ef88e434b0\javafmllanguage-1.20.1-47.1.3.jar is missing mods.toml file
+[16Oct2023 20:33:04.596] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate C:\Users\Maste\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.1.3\d785f4087ec3be094fd5aed801f5366ca958a81b\lowcodelanguage-1.20.1-47.1.3.jar
+[16Oct2023 20:33:04.596] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Maste\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.1.3\d785f4087ec3be094fd5aed801f5366ca958a81b\lowcodelanguage-1.20.1-47.1.3.jar is missing mods.toml file
+[16Oct2023 20:33:04.599] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate C:\Users\Maste\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.1.3\be60c45f3578cdf944a669c6ea16fd91bec50f2e\mclanguage-1.20.1-47.1.3.jar
+[16Oct2023 20:33:04.600] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Maste\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.1.3\be60c45f3578cdf944a669c6ea16fd91bec50f2e\mclanguage-1.20.1-47.1.3.jar is missing mods.toml file
+[16Oct2023 20:33:04.604] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate C:\Users\Maste\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.1.3\1aadc0201d8e97b107d9978c7fe066bb54bbb9dc\fmlcore-1.20.1-47.1.3.jar
+[16Oct2023 20:33:04.604] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Maste\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.1.3\1aadc0201d8e97b107d9978c7fe066bb54bbb9dc\fmlcore-1.20.1-47.1.3.jar is missing mods.toml file
+[16Oct2023 20:33:04.608] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\build\resources\main
+[16Oct2023 20:33:04.613] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file main with {gkbumblezoneadditions} mods - versions {1.0-SNAPSHOT}
+[16Oct2023 20:33:04.615] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate /
+[16Oct2023 20:33:04.617] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file  with {forge} mods - versions {47.1.3}
+[16Oct2023 20:33:04.637] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate C:\Users\Maste\.gradle\caches\forge_gradle\deobf_dependencies\maven\modrinth\the-bumblezone\7.0.17+1.20.1-forge_mapped_official_1.20.1\the-bumblezone-7.0.17+1.20.1-forge_mapped_official_1.20.1.jar
+[16Oct2023 20:33:04.638] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file the-bumblezone-7.0.17+1.20.1-forge_mapped_official_1.20.1.jar with {the_bumblezone} mods - versions {7.0.17+1.20.1-forge}
+[16Oct2023 20:33:04.643] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate C:\Users\Maste\.gradle\caches\forge_gradle\deobf_dependencies\maven\modrinth\the-bumblezone\7.0.17+1.20.1-forge_mapped_official_1.20.1\the-bumblezone-7.0.17+1.20.1-forge_mapped_official_1.20.1.jar
+[16Oct2023 20:33:04.644] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file the-bumblezone-7.0.17+1.20.1-forge_mapped_official_1.20.1.jar with {the_bumblezone} mods - versions {7.0.17+1.20.1-forge}
+[16Oct2023 20:33:04.649] [main/DEBUG] [net.minecraftforge.fml.loading.UniqueModListBuilder/]: Found 3 mods for first modid the_bumblezone, selecting most recent based on version data
+[16Oct2023 20:33:04.650] [main/DEBUG] [net.minecraftforge.fml.loading.UniqueModListBuilder/]: Selected file the_bumblezone-7.0.17+1.20.1-forge.jar for modid the_bumblezone with version 7.0.17+1.20.1-forge
+[16Oct2023 20:33:04.656] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.AbstractJarFileDependencyLocator/]: Failed to load resource META-INF\jarjar\metadata.json from forge-1.20.1-47.1.3_mapped_official_1.20.1-recomp.jar, it does not contain dependency information.
+[16Oct2023 20:33:04.656] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.AbstractJarFileDependencyLocator/]: Failed to load resource META-INF\jarjar\metadata.json from , it does not contain dependency information.
+[16Oct2023 20:33:04.656] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.AbstractJarFileDependencyLocator/]: Failed to load resource META-INF\jarjar\metadata.json from main, it does not contain dependency information.
+[16Oct2023 20:33:04.657] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.AbstractJarFileDependencyLocator/]: Failed to load resource META-INF\jarjar\metadata.json from mclanguage-1.20.1-47.1.3.jar, it does not contain dependency information.
+[16Oct2023 20:33:04.657] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.AbstractJarFileDependencyLocator/]: Failed to load resource META-INF\jarjar\metadata.json from javafmllanguage-1.20.1-47.1.3.jar, it does not contain dependency information.
+[16Oct2023 20:33:04.657] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.AbstractJarFileDependencyLocator/]: Failed to load resource META-INF\jarjar\metadata.json from fmlcore-1.20.1-47.1.3.jar, it does not contain dependency information.
+[16Oct2023 20:33:04.657] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.AbstractJarFileDependencyLocator/]: Failed to load resource META-INF\jarjar\metadata.json from lowcodelanguage-1.20.1-47.1.3.jar, it does not contain dependency information.
+[16Oct2023 20:33:04.706] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate 
+[16Oct2023 20:33:04.707] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file athena-forge-1.20.1-3.1.1.jar with {athena} mods - versions {3.1.1}
+[16Oct2023 20:33:04.708] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate 
+[16Oct2023 20:33:04.709] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file mixinextras-forge-0.2.0-beta.7.jar with {mixinextras} mods - versions {0.2.0-beta.7}
+[16Oct2023 20:33:04.709] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.AbstractJarFileDependencyLocator/]: Failed to load resource META-INF\jarjar\metadata.json from athena-forge-1.20.1-3.1.1.jar, it does not contain dependency information.
+[16Oct2023 20:33:04.714] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.AbstractJarFileDependencyLocator/]: Failed to load resource META-INF\jarjar\metadata.json from MixinExtras-0.2.0-beta.7.jar, it does not contain dependency information.
+[16Oct2023 20:33:04.757] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate 
+[16Oct2023 20:33:04.759] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file athena-forge-1.20.1-3.1.1.jar with {athena} mods - versions {3.1.1}
+[16Oct2023 20:33:04.762] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate 
+[16Oct2023 20:33:04.763] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file mixinextras-forge-0.2.0-beta.7.jar with {mixinextras} mods - versions {0.2.0-beta.7}
+[16Oct2023 20:33:04.766] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 3 dependencies adding them to mods collection
+[16Oct2023 20:33:04.769] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file forge-1.20.1-47.1.3_mapped_official_1.20.1-recomp.jar with {minecraft} mods - versions {1.20.1}
+[16Oct2023 20:33:04.771] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFile/LOADING]: Loading mod file C:\Users\Maste\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.20.1-47.1.3_mapped_official_1.20.1\forge-1.20.1-47.1.3_mapped_official_1.20.1-recomp.jar with languages [LanguageSpec[languageName=minecraft, acceptedVersions=1]]
+[16Oct2023 20:33:04.773] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\run\mods\the_bumblezone-7.0.17+1.20.1-forge.jar
+[16Oct2023 20:33:04.774] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file the_bumblezone-7.0.17+1.20.1-forge.jar with {the_bumblezone} mods - versions {7.0.17+1.20.1-forge}
+[16Oct2023 20:33:04.774] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFile/LOADING]: Loading mod file G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\run\mods\the_bumblezone-7.0.17+1.20.1-forge.jar with languages [LanguageSpec[languageName=javafml, acceptedVersions=[38,)]]
+[16Oct2023 20:33:04.775] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate /
+[16Oct2023 20:33:04.776] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file  with {forge} mods - versions {47.1.3}
+[16Oct2023 20:33:04.776] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFile/LOADING]: Loading mod file / with languages [LanguageSpec[languageName=javafml, acceptedVersions=[24,]]]
+[16Oct2023 20:33:04.779] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Found coremod field_to_method with Javascript path coremods/field_to_method.js
+[16Oct2023 20:33:04.780] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Found coremod field_to_instanceof with Javascript path coremods/field_to_instanceof.js
+[16Oct2023 20:33:04.780] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Found coremod add_bouncer_method with Javascript path coremods/add_bouncer_method.js
+[16Oct2023 20:33:04.780] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Found coremod method_redirector with Javascript path coremods/method_redirector.js
+[16Oct2023 20:33:04.780] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFile/LOADING]: Found coremod coremods/field_to_method.js
+[16Oct2023 20:33:04.780] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFile/LOADING]: Found coremod coremods/field_to_instanceof.js
+[16Oct2023 20:33:04.780] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFile/LOADING]: Found coremod coremods/add_bouncer_method.js
+[16Oct2023 20:33:04.781] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFile/LOADING]: Found coremod coremods/method_redirector.js
+[16Oct2023 20:33:04.781] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate 
+[16Oct2023 20:33:04.782] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file athena-forge-1.20.1-3.1.1.jar with {athena} mods - versions {3.1.1}
+[16Oct2023 20:33:04.783] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFile/LOADING]: Loading mod file  with languages [LanguageSpec[languageName=javafml, acceptedVersions=[47,)]]
+[16Oct2023 20:33:04.784] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\build\resources\main
+[16Oct2023 20:33:04.786] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file main with {gkbumblezoneadditions} mods - versions {1.0-SNAPSHOT}
+[16Oct2023 20:33:04.786] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFile/LOADING]: Loading mod file G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\build\resources\main with languages [LanguageSpec[languageName=javafml, acceptedVersions=[47,)]]
+[16Oct2023 20:33:04.786] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFile/LOADING]: Loading mod file  with languages []
+[16Oct2023 20:33:04.786] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate 
+[16Oct2023 20:33:04.787] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file mixinextras-forge-0.2.0-beta.7.jar with {mixinextras} mods - versions {0.2.0-beta.7}
+[16Oct2023 20:33:04.787] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFile/LOADING]: Loading mod file  with languages [LanguageSpec[languageName=javafml, acceptedVersions=*]]
+[16Oct2023 20:33:04.789] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: End scan trigger - transformation service fml
+[16Oct2023 20:33:04.801] [main/DEBUG] [net.minecraftforge.fml.loading.LanguageLoadingProvider/CORE]: Found 3 language providers
+[16Oct2023 20:33:04.801] [main/DEBUG] [net.minecraftforge.fml.loading.LanguageLoadingProvider/CORE]: Found language provider minecraft, version 1.0
+[16Oct2023 20:33:04.803] [main/DEBUG] [net.minecraftforge.fml.loading.LanguageLoadingProvider/CORE]: Found language provider lowcodefml, version 47
+[16Oct2023 20:33:04.804] [main/DEBUG] [net.minecraftforge.fml.loading.LanguageLoadingProvider/CORE]: Found language provider javafml, version 47
+[16Oct2023 20:33:04.811] [main/DEBUG] [net.minecraftforge.fml.loading.ModSorter/]: Configured system mods: [minecraft, forge]
+[16Oct2023 20:33:04.811] [main/DEBUG] [net.minecraftforge.fml.loading.ModSorter/]: Found system mod: minecraft
+[16Oct2023 20:33:04.811] [main/DEBUG] [net.minecraftforge.fml.loading.ModSorter/]: Found system mod: forge
+[16Oct2023 20:33:04.815] [main/DEBUG] [net.minecraftforge.fml.loading.ModSorter/LOADING]: Found 7 mod requirements (6 mandatory, 1 optional)
+[16Oct2023 20:33:04.816] [main/DEBUG] [net.minecraftforge.fml.loading.ModSorter/LOADING]: Found 0 mod requirements missing (0 mandatory, 0 optional)
+[16Oct2023 20:33:05.264] [main/DEBUG] [net.minecraftforge.fml.loading.MCPNamingService/CORE]: Loaded 33222 method mappings from methods.csv
+[16Oct2023 20:33:05.298] [main/DEBUG] [net.minecraftforge.fml.loading.MCPNamingService/CORE]: Loaded 31003 field mappings from fields.csv
+[16Oct2023 20:33:05.347] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Transformation services loading transformers
+[16Oct2023 20:33:05.348] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Initializing transformers for transformation service mixin
+[16Oct2023 20:33:05.349] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Initialized transformers for transformation service mixin
+[16Oct2023 20:33:05.349] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Initializing transformers for transformation service fml
+[16Oct2023 20:33:05.349] [main/DEBUG] [net.minecraftforge.fml.loading.FMLServiceProvider/CORE]: Loading coremod transformers
+[16Oct2023 20:33:05.350] [main/DEBUG] [net.minecraftforge.coremod.CoreModEngine/COREMOD]: Loading CoreMod from coremods/field_to_method.js
+[16Oct2023 20:33:05.566] [main/DEBUG] [net.minecraftforge.coremod.CoreModEngine/COREMOD]: CoreMod loaded successfully
+[16Oct2023 20:33:05.566] [main/DEBUG] [net.minecraftforge.coremod.CoreModEngine/COREMOD]: Loading CoreMod from coremods/field_to_instanceof.js
+[16Oct2023 20:33:05.629] [main/DEBUG] [net.minecraftforge.coremod.CoreModEngine/COREMOD]: CoreMod loaded successfully
+[16Oct2023 20:33:05.630] [main/DEBUG] [net.minecraftforge.coremod.CoreModEngine/COREMOD]: Loading CoreMod from coremods/add_bouncer_method.js
+[16Oct2023 20:33:05.668] [main/DEBUG] [net.minecraftforge.coremod.CoreModEngine/COREMOD]: CoreMod loaded successfully
+[16Oct2023 20:33:05.668] [main/DEBUG] [net.minecraftforge.coremod.CoreModEngine/COREMOD]: Loading CoreMod from coremods/method_redirector.js
+[16Oct2023 20:33:05.733] [main/DEBUG] [net.minecraftforge.coremod.CoreModEngine/COREMOD]: CoreMod loaded successfully
+[16Oct2023 20:33:05.746] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@2525a5b8 to Target : CLASS {Lnet/minecraft/world/level/biome/Biome;} {} {V}
+[16Oct2023 20:33:05.748] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@53e76c11 to Target : CLASS {Lnet/minecraft/world/level/levelgen/structure/Structure;} {} {V}
+[16Oct2023 20:33:05.748] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@42cc183e to Target : CLASS {Lnet/minecraft/world/effect/MobEffectInstance;} {} {V}
+[16Oct2023 20:33:05.748] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@3e4e8fdf to Target : CLASS {Lnet/minecraft/world/level/block/LiquidBlock;} {} {V}
+[16Oct2023 20:33:05.748] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@6a1d6ef2 to Target : CLASS {Lnet/minecraft/world/item/BucketItem;} {} {V}
+[16Oct2023 20:33:05.748] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@2721044 to Target : CLASS {Lnet/minecraft/world/level/block/StairBlock;} {} {V}
+[16Oct2023 20:33:05.748] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@205df5dc to Target : CLASS {Lnet/minecraft/world/level/block/FlowerPotBlock;} {} {V}
+[16Oct2023 20:33:05.748] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@6aa7b67f to Target : CLASS {Lnet/minecraft/world/item/ItemStack;} {} {V}
+[16Oct2023 20:33:05.748] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@6bcc3f27 to Target : CLASS {Lnet/minecraft/network/play/client/CClientSettingsPacket;} {} {V}
+[16Oct2023 20:33:05.750] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/level/levelgen/structure/structures/SwampHutPiece;} {} {V}
+[16Oct2023 20:33:05.750] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/entity/animal/horse/SkeletonTrapGoal;} {} {V}
+[16Oct2023 20:33:05.750] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/entity/npc/Villager;} {} {V}
+[16Oct2023 20:33:05.750] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/server/commands/RaidCommand;} {} {V}
+[16Oct2023 20:33:05.750] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/server/commands/SummonCommand;} {} {V}
+[16Oct2023 20:33:05.750] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/entity/ai/village/VillageSiege;} {} {V}
+[16Oct2023 20:33:05.750] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/entity/monster/Zombie;} {} {V}
+[16Oct2023 20:33:05.750] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/level/levelgen/PatrolSpawner;} {} {V}
+[16Oct2023 20:33:05.750] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/level/levelgen/structure/structures/WoodlandMansionPieces$WoodlandMansionPiece;} {} {V}
+[16Oct2023 20:33:05.750] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/entity/npc/CatSpawner;} {} {V}
+[16Oct2023 20:33:05.750] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/entity/monster/Evoker$EvokerSummonSpellGoal;} {} {V}
+[16Oct2023 20:33:05.750] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/level/levelgen/structure/structures/OceanRuinPieces$OceanRuinPiece;} {} {V}
+[16Oct2023 20:33:05.750] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/level/levelgen/PhantomSpawner;} {} {V}
+[16Oct2023 20:33:05.750] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/entity/monster/Spider;} {} {V}
+[16Oct2023 20:33:05.751] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/level/NaturalSpawner;} {} {V}
+[16Oct2023 20:33:05.751] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplate;} {} {V}
+[16Oct2023 20:33:05.751] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/entity/raid/Raid;} {} {V}
+[16Oct2023 20:33:05.751] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/entity/monster/ZombieVillager;} {} {V}
+[16Oct2023 20:33:05.751] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/entity/monster/Strider;} {} {V}
+[16Oct2023 20:33:05.752] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/level/levelgen/structure/structures/OceanMonumentPieces$OceanMonumentPiece;} {} {V}
+[16Oct2023 20:33:05.752] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/entity/EntityType;} {} {V}
+[16Oct2023 20:33:05.752] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@79aee22a to Target : CLASS {Lnet/minecraft/world/entity/animal/frog/Tadpole;} {} {V}
+[16Oct2023 20:33:05.752] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Initialized transformers for transformation service fml
+[16Oct2023 20:33:06.045] [main/DEBUG] [mixin/]: Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:ModLauncher Root Container(ModLauncher:4f56a0a2)]
+[16Oct2023 20:33:06.047] [main/DEBUG] [mixin/]: Registering mixin config: gkbumblezoneadditions.mixins.json
+[16Oct2023 20:33:06.065] [main/DEBUG] [mixin/]: Compatibility level JAVA_17 specified by gkbumblezoneadditions.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[16Oct2023 20:33:06.068] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[16Oct2023 20:33:06.069] [main/DEBUG] [mixin/]: Processing launch tasks for PlatformAgent[MixinPlatformAgentDefault:ModLauncher Root Container(ModLauncher:4f56a0a2)]
+[16Oct2023 20:33:06.069] [main/DEBUG] [mixin/]: Adding mixin platform agents for container SecureJarResource(minecraft)
+[16Oct2023 20:33:06.069] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentMinecraftForge for SecureJarResource(minecraft)
+[16Oct2023 20:33:06.069] [main/DEBUG] [mixin/]: MixinPlatformAgentMinecraftForge rejected container SecureJarResource(minecraft)
+[16Oct2023 20:33:06.069] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentDefault for SecureJarResource(minecraft)
+[16Oct2023 20:33:06.069] [main/DEBUG] [mixin/]: MixinPlatformAgentDefault accepted container SecureJarResource(minecraft)
+[16Oct2023 20:33:06.069] [main/DEBUG] [mixin/]: Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(minecraft)]
+[16Oct2023 20:33:06.069] [main/DEBUG] [mixin/]: Adding mixin platform agents for container SecureJarResource(the_bumblezone)
+[16Oct2023 20:33:06.071] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentMinecraftForge for SecureJarResource(the_bumblezone)
+[16Oct2023 20:33:06.071] [main/DEBUG] [mixin/]: MixinPlatformAgentMinecraftForge rejected container SecureJarResource(the_bumblezone)
+[16Oct2023 20:33:06.071] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentDefault for SecureJarResource(the_bumblezone)
+[16Oct2023 20:33:06.071] [main/DEBUG] [mixin/]: MixinPlatformAgentDefault accepted container SecureJarResource(the_bumblezone)
+[16Oct2023 20:33:06.071] [main/DEBUG] [mixin/]: Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(the_bumblezone)]
+[16Oct2023 20:33:06.071] [main/DEBUG] [mixin/]: Registering mixin config: the_bumblezone-common.mixins.json
+[16Oct2023 20:33:06.073] [main/DEBUG] [mixin/]: Registering mixin config: the_bumblezone-forge.mixins.json
+[16Oct2023 20:33:06.078] [main/DEBUG] [mixin/]: Adding mixin platform agents for container SecureJarResource(forge)
+[16Oct2023 20:33:06.078] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentMinecraftForge for SecureJarResource(forge)
+[16Oct2023 20:33:06.078] [main/DEBUG] [mixin/]: MixinPlatformAgentMinecraftForge rejected container SecureJarResource(forge)
+[16Oct2023 20:33:06.078] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentDefault for SecureJarResource(forge)
+[16Oct2023 20:33:06.078] [main/DEBUG] [mixin/]: MixinPlatformAgentDefault accepted container SecureJarResource(forge)
+[16Oct2023 20:33:06.078] [main/DEBUG] [mixin/]: Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(forge)]
+[16Oct2023 20:33:06.078] [main/DEBUG] [mixin/]: Adding mixin platform agents for container SecureJarResource(athena)
+[16Oct2023 20:33:06.078] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentMinecraftForge for SecureJarResource(athena)
+[16Oct2023 20:33:06.079] [main/DEBUG] [mixin/]: MixinPlatformAgentMinecraftForge rejected container SecureJarResource(athena)
+[16Oct2023 20:33:06.079] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentDefault for SecureJarResource(athena)
+[16Oct2023 20:33:06.079] [main/DEBUG] [mixin/]: MixinPlatformAgentDefault accepted container SecureJarResource(athena)
+[16Oct2023 20:33:06.079] [main/DEBUG] [mixin/]: Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(athena)]
+[16Oct2023 20:33:06.079] [main/DEBUG] [mixin/]: Registering mixin config: athena.mixins.json
+[16Oct2023 20:33:06.081] [main/DEBUG] [mixin/]: Registering mixin config: athena-forge.mixins.json
+[16Oct2023 20:33:06.083] [main/DEBUG] [mixin/]: Adding mixin platform agents for container SecureJarResource(gkbumblezoneadditions)
+[16Oct2023 20:33:06.083] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentMinecraftForge for SecureJarResource(gkbumblezoneadditions)
+[16Oct2023 20:33:06.084] [main/DEBUG] [mixin/]: MixinPlatformAgentMinecraftForge rejected container SecureJarResource(gkbumblezoneadditions)
+[16Oct2023 20:33:06.084] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentDefault for SecureJarResource(gkbumblezoneadditions)
+[16Oct2023 20:33:06.084] [main/DEBUG] [mixin/]: MixinPlatformAgentDefault accepted container SecureJarResource(gkbumblezoneadditions)
+[16Oct2023 20:33:06.084] [main/DEBUG] [mixin/]: Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(gkbumblezoneadditions)]
+[16Oct2023 20:33:06.084] [main/DEBUG] [mixin/]: Adding mixin platform agents for container SecureJarResource(MixinExtras.beta._7)
+[16Oct2023 20:33:06.084] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentMinecraftForge for SecureJarResource(MixinExtras.beta._7)
+[16Oct2023 20:33:06.084] [main/DEBUG] [mixin/]: MixinPlatformAgentMinecraftForge rejected container SecureJarResource(MixinExtras.beta._7)
+[16Oct2023 20:33:06.084] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentDefault for SecureJarResource(MixinExtras.beta._7)
+[16Oct2023 20:33:06.085] [main/DEBUG] [mixin/]: MixinPlatformAgentDefault accepted container SecureJarResource(MixinExtras.beta._7)
+[16Oct2023 20:33:06.085] [main/DEBUG] [mixin/]: Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(MixinExtras.beta._7)]
+[16Oct2023 20:33:06.085] [main/DEBUG] [mixin/]: Adding mixin platform agents for container SecureJarResource(mixinextras)
+[16Oct2023 20:33:06.085] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentMinecraftForge for SecureJarResource(mixinextras)
+[16Oct2023 20:33:06.085] [main/DEBUG] [mixin/]: MixinPlatformAgentMinecraftForge rejected container SecureJarResource(mixinextras)
+[16Oct2023 20:33:06.085] [main/DEBUG] [mixin/]: Instancing new MixinPlatformAgentDefault for SecureJarResource(mixinextras)
+[16Oct2023 20:33:06.085] [main/DEBUG] [mixin/]: MixinPlatformAgentDefault accepted container SecureJarResource(mixinextras)
+[16Oct2023 20:33:06.085] [main/DEBUG] [mixin/]: Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(mixinextras)]
+[16Oct2023 20:33:06.085] [main/DEBUG] [mixin/]: Registering mixin config: mixinextras.init.mixins.json
+[16Oct2023 20:33:06.088] [main/DEBUG] [mixin/]: inject() running with 8 agents
+[16Oct2023 20:33:06.088] [main/DEBUG] [mixin/]: Processing inject() for PlatformAgent[MixinPlatformAgentDefault:ModLauncher Root Container(ModLauncher:4f56a0a2)]
+[16Oct2023 20:33:06.088] [main/DEBUG] [mixin/]: Processing inject() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(minecraft)]
+[16Oct2023 20:33:06.088] [main/DEBUG] [mixin/]: Processing inject() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(the_bumblezone)]
+[16Oct2023 20:33:06.088] [main/DEBUG] [mixin/]: Processing inject() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(forge)]
+[16Oct2023 20:33:06.088] [main/DEBUG] [mixin/]: Processing inject() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(athena)]
+[16Oct2023 20:33:06.088] [main/DEBUG] [mixin/]: Processing inject() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(gkbumblezoneadditions)]
+[16Oct2023 20:33:06.089] [main/DEBUG] [mixin/]: Processing inject() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(MixinExtras.beta._7)]
+[16Oct2023 20:33:06.089] [main/DEBUG] [mixin/]: Processing inject() for PlatformAgent[MixinPlatformAgentDefault:SecureJarResource(mixinextras)]
+[16Oct2023 20:33:06.089] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\Maste\.gradle\caches\forge_gradle\assets, --assetIndex, 5]
+[16Oct2023 20:33:06.185] [main/DEBUG] [mixin/]: Error cleaning class output directory: .mixin.out
+[16Oct2023 20:33:06.187] [main/DEBUG] [mixin/]: Preparing mixins for MixinEnvironment[DEFAULT]
+[16Oct2023 20:33:06.187] [main/DEBUG] [mixin/]: Selecting config gkbumblezoneadditions.mixins.json
+[16Oct2023 20:33:06.191] [main/DEBUG] [mixin/]: Selecting config the_bumblezone-common.mixins.json
+[16Oct2023 20:33:06.418] [main/INFO] [mixin/]: Remapping refMap the_bumblezone-common-refmap.json using G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\build\createSrgToMcp\output.srg
+[16Oct2023 20:33:06.419] [main/DEBUG] [mixin/]: Selecting config the_bumblezone-forge.mixins.json
+[16Oct2023 20:33:06.419] [main/INFO] [mixin/]: Remapping refMap the_bumblezone-forge-refmap.json using G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\build\createSrgToMcp\output.srg
+[16Oct2023 20:33:06.421] [main/DEBUG] [mixin/]: Selecting config athena.mixins.json
+[16Oct2023 20:33:06.422] [main/INFO] [mixin/]: Remapping refMap athena-common-1.20.1-common-refmap.json using G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\build\createSrgToMcp\output.srg
+[16Oct2023 20:33:06.422] [main/DEBUG] [mixin/]: Selecting config athena-forge.mixins.json
+[16Oct2023 20:33:06.423] [main/INFO] [mixin/]: Remapping refMap athena-forge-1.20.1-forge-refmap.json using G:\MinecraftModProjects_1.20\GKBumbleZoneAddons\GKBumbleZoneAdditions\build\createSrgToMcp\output.srg
+[16Oct2023 20:33:06.423] [main/DEBUG] [mixin/]: Selecting config mixinextras.init.mixins.json
+[16Oct2023 20:33:06.452] [main/DEBUG] [mixin/]: Registering new injector for @Inject with org.spongepowered.asm.mixin.injection.struct.CallbackInjectionInfo
+[16Oct2023 20:33:06.454] [main/DEBUG] [mixin/]: Registering new injector for @ModifyArg with org.spongepowered.asm.mixin.injection.struct.ModifyArgInjectionInfo
+[16Oct2023 20:33:06.454] [main/DEBUG] [mixin/]: Registering new injector for @ModifyArgs with org.spongepowered.asm.mixin.injection.struct.ModifyArgsInjectionInfo
+[16Oct2023 20:33:06.455] [main/DEBUG] [mixin/]: Registering new injector for @Redirect with org.spongepowered.asm.mixin.injection.struct.RedirectInjectionInfo
+[16Oct2023 20:33:06.456] [main/DEBUG] [mixin/]: Registering new injector for @ModifyVariable with org.spongepowered.asm.mixin.injection.struct.ModifyVariableInjectionInfo
+[16Oct2023 20:33:06.457] [main/DEBUG] [mixin/]: Registering new injector for @ModifyConstant with org.spongepowered.asm.mixin.injection.struct.ModifyConstantInjectionInfo
+[16Oct2023 20:33:06.461] [main/DEBUG] [mixin/]: Registering new injector for @ModifyExpressionValue with com.llamalad7.mixinextras.injector.ModifyExpressionValueInjectionInfo
+[16Oct2023 20:33:06.463] [main/DEBUG] [mixin/]: Registering new injector for @ModifyReceiver with com.llamalad7.mixinextras.injector.ModifyReceiverInjectionInfo
+[16Oct2023 20:33:06.465] [main/DEBUG] [mixin/]: Registering new injector for @ModifyReturnValue with com.llamalad7.mixinextras.injector.ModifyReturnValueInjectionInfo
+[16Oct2023 20:33:06.469] [main/DEBUG] [mixin/]: Registering new injector for @WrapOperation with com.llamalad7.mixinextras.injector.wrapoperation.WrapOperationInjectionInfo
+[16Oct2023 20:33:06.471] [main/DEBUG] [mixin/]: Registering new injector for @WrapWithCondition with com.llamalad7.mixinextras.injector.WrapWithConditionInjectionInfo
+[16Oct2023 20:33:06.473] [main/DEBUG] [mixin/]: Registering new injector for @SugarWrapper with com.llamalad7.mixinextras.sugar.impl.SugarWrapperInjectionInfo
+[16Oct2023 20:33:06.496] [main/DEBUG] [mixin/]: Preparing gkbumblezoneadditions.mixins.json (0)
+[16Oct2023 20:33:06.497] [main/DEBUG] [mixin/]: Preparing the_bumblezone-common.mixins.json (81)
+[16Oct2023 20:33:06.668] [main/DEBUG] [mixin/]: @Mixin target net/minecraft/world/item/BlockItem is public in the_bumblezone-common.mixins.json:blocks.WaterlogForPlacingBlockMixin and should be specified in value
+[16Oct2023 20:33:06.669] [main/DEBUG] [mixin/]: @Mixin target net/minecraft/world/item/StandingAndWallBlockItem is public in the_bumblezone-common.mixins.json:blocks.WaterlogForPlacingBlockMixin and should be specified in value
+[16Oct2023 20:33:06.679] [main/DEBUG] [net.minecraftforge.coremod.transformer.CoreModBaseTransformer/COREMOD]: Transforming net/minecraft/world/effect/MobEffectInstance
+[16Oct2023 20:33:06.736] [main/DEBUG] [net.minecraftforge.coremod.transformer.CoreModBaseTransformer/COREMOD]: Transforming net/minecraft/world/entity/EntityType
+[16Oct2023 20:33:06.963] [main/DEBUG] [net.minecraftforge.coremod.transformer.CoreModBaseTransformer/COREMOD]: Transforming net/minecraft/world/level/NaturalSpawner
+[16Oct2023 20:33:07.110] [main/DEBUG] [net.minecraftforge.coremod.transformer.CoreModBaseTransformer/COREMOD]: Transforming net/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplate
+[16Oct2023 20:33:07.261] [main/DEBUG] [mixin/]: Preparing the_bumblezone-forge.mixins.json (15)
+[16Oct2023 20:33:07.291] [main/DEBUG] [mixin/]: Preparing athena.mixins.json (1)
+[16Oct2023 20:33:07.295] [main/DEBUG] [mixin/]: Preparing athena-forge.mixins.json (1)
+[16Oct2023 20:33:07.296] [main/DEBUG] [mixin/]: Preparing mixinextras.init.mixins.json (0)
+[16Oct2023 20:33:07.347] [main/DEBUG] [mixin/]: Inner class com/telepathicgrunt/the_bumblezone/mixins/forge/client/BzArmorMixin$1 in com/telepathicgrunt/the_bumblezone/mixins/forge/client/BzArmorMixin on com/telepathicgrunt/the_bumblezone/items/BzArmor gets unique name com/telepathicgrunt/the_bumblezone/items/BzArmor$Anonymous$fbcb3e3447a44ca59c3d7ad14d29b69a
+[16Oct2023 20:33:07.354] [main/DEBUG] [mixin/]: Inner class com/telepathicgrunt/the_bumblezone/mixins/forge/client/BzDyeableArmorMixin$1 in com/telepathicgrunt/the_bumblezone/mixins/forge/client/BzDyeableArmorMixin on com/telepathicgrunt/the_bumblezone/items/BzDyeableArmor gets unique name com/telepathicgrunt/the_bumblezone/items/BzDyeableArmor$Anonymous$fdedc83c233948d4b5b06f6c7f3cf43d
+[16Oct2023 20:33:07.354] [main/DEBUG] [mixin/]: Inner class com/telepathicgrunt/the_bumblezone/mixins/forge/client/BzEffectMixin$1 in com/telepathicgrunt/the_bumblezone/mixins/forge/client/BzEffectMixin on com/telepathicgrunt/the_bumblezone/effects/BzEffect gets unique name com/telepathicgrunt/the_bumblezone/effects/BzEffect$Anonymous$430f25589cb14aeea6564f2ddd692ae7
+[16Oct2023 20:33:07.357] [main/DEBUG] [mixin/]: Prepared 98 mixins in 1.170 sec (11.9ms avg) (0ms load, 0ms transform, 0ms plugin)
+[16Oct2023 20:33:07.395] [main/DEBUG] [mixin/]: Mixing client.MinecraftMixin from the_bumblezone-common.mixins.json into net.minecraft.client.Minecraft
+[16Oct2023 20:33:07.408] [main/FATAL] [mixin/]: Mixin apply failed the_bumblezone-common.mixins.json:client.MinecraftMixin -> net.minecraft.client.Minecraft: org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException @Shadow field f_91074_ was not located in the target class net.minecraft.client.Minecraft. Using refmap the_bumblezone-common-refmap.json
+org.spongepowered.asm.mixin.transformer.throwables.InvalidMixinException: @Shadow field f_91074_ was not located in the target class net.minecraft.client.Minecraft. Using refmap the_bumblezone-common-refmap.json
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attachFields(MixinPreProcessorStandard.java:629) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.attach(MixinPreProcessorStandard.java:305) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
+	at org.spongepowered.asm.mixin.transformer.MixinPreProcessorStandard.createContextFor(MixinPreProcessorStandard.java:280) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
+	at org.spongepowered.asm.mixin.transformer.MixinInfo.createContextFor(MixinInfo.java:1288) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.apply(MixinApplicatorStandard.java:292) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.apply(TargetClassContext.java:383) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:365) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:363) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:250) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
+	at org.spongepowered.asm.service.modlauncher.MixinTransformationHandler.processClass(MixinTransformationHandler.java:131) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
+	at org.spongepowered.asm.launch.MixinLaunchPluginLegacy.processClass(MixinLaunchPluginLegacy.java:131) ~[mixin-0.8.5.jar:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4]
+	at cpw.mods.modlauncher.serviceapi.ILaunchPluginService.processClassWithFlags(ILaunchPluginService.java:156) ~[modlauncher-10.0.9.jar:10.0.9+10.0.9+main.dcd20f30]
+	at cpw.mods.modlauncher.LaunchPluginHandler.offerClassNodeToPlugins(LaunchPluginHandler.java:88) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.ClassTransformer.transform(ClassTransformer.java:120) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.TransformingClassLoader.maybeTransformClassBytes(TransformingClassLoader.java:50) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:113) ~[securejarhandler-2.1.10.jar:?]
+	at cpw.mods.cl.ModuleClassLoader.lambda$findClass$15(ModuleClassLoader.java:219) ~[securejarhandler-2.1.10.jar:?]
+	at cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:229) ~[securejarhandler-2.1.10.jar:?]
+	at cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:219) ~[securejarhandler-2.1.10.jar:?]
+	at cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:135) ~[securejarhandler-2.1.10.jar:?]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[?:?]
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[?:?]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[?:?]
+	at java.lang.Class.privateGetPublicMethods(Class.java:3427) ~[?:?]
+	at java.lang.Class.privateGetPublicMethods(Class.java:3433) ~[?:?]
+	at java.lang.Class.getMethods(Class.java:2019) ~[?:?]
+	at net.minecraftforge.fml.earlydisplay.DisplayWindow.updateModuleReads(DisplayWindow.java:587) ~[fmlearlydisplay-1.20.1-47.1.3.jar:1.0]
+	at net.minecraftforge.fml.loading.ImmediateWindowHandler.acceptGameLayer(ImmediateWindowHandler.java:71) ~[fmlloader-1.20.1-47.1.3.jar:1.0]
+	at net.minecraftforge.fml.loading.FMLLoader.beforeStart(FMLLoader.java:207) ~[fmlloader-1.20.1-47.1.3.jar:1.0]
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.launchService(CommonLaunchHandler.java:92) ~[fmlloader-1.20.1-47.1.3.jar:?]
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar:?]
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?]

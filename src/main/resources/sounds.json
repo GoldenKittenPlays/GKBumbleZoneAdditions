@@ -1,0 +1,8 @@
+{
+  "trader_bee_trade_accepted": {
+    "subtitles": "sounds.gkbumblezoneadditions.trader_bee_trade_accepted",
+    "sounds": [
+      "gkbumblezoneadditions:trader_bee_trade_accepted"
+    ]
+  }
+}
