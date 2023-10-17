@@ -49,6 +49,7 @@ public class TraderBeeTemptGoal extends Goal {
 
     @Override
     public void tick() {
+        assert this.player != null;
         this.mob.getLookControl().setLookAt(this.player, (float)(this.mob.getMaxHeadYRot() + 20), (float)this.mob.getMaxHeadXRot());
         if (this.mob.distanceToSqr(this.player) < 6.25) {
             this.mob.getNavigation().stop();
@@ -56,5 +57,9 @@ public class TraderBeeTemptGoal extends Goal {
         else {
             this.mob.getNavigation().moveTo(this.player, this.speedModifier * (1));
         }
+    }
+
+    public TargetingConditions getTargetingConditions() {
+        return targetingConditions;
     }
 }

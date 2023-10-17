@@ -133,10 +133,11 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant {
         ItemStack itemstack = new ItemStack(BzItems.ROYAL_JELLY_BOTTLE.get(), 1);
 
         ServerPlayer serverPlayer = ((ServerPlayer)this.tradingPlayer);
+        assert serverPlayer != null;
         Advancement advancement = serverPlayer.server.getAdvancements().getAdvancement(BzCriterias.QUEENS_DESIRE_FINAL_ADVANCEMENT);
         Map<Advancement, AdvancementProgress> advancementsProgressMap = ((PlayerAdvancementsAccessor)serverPlayer.getAdvancements()).getProgress();
         this.offers = new MerchantOffers();
-        if (advancement != null && advancementsProgressMap.containsKey(advancement) && ((AdvancementProgress)advancementsProgressMap.get(advancement)).isDone()) {
+        if (advancement != null && advancementsProgressMap.containsKey(advancement) && advancementsProgressMap.get(advancement).isDone()) {
             this.offers.add(new MerchantOffer(itemstack, new ItemStack(Items.ENCHANTED_GOLDEN_APPLE), 1, getFriendship(), getFriendship()));
             return this.offers;
         }

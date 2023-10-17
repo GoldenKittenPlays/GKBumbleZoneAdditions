@@ -21,7 +21,7 @@ public class TraderBeeRandomFlyGoal extends Goal {
     }
 
     public void start() {
-        target = getBlockInViewBeehemoth();
+        target = getBlockInViewTraderBee();
         if (target != null) {
             traderBeeEntityEntity.getMoveControl().setWantedPosition(target.getX() + 0.5D, target.getY() + 0.5D, target.getZ() + 0.5D, traderBeeEntityEntity.getFlyingSpeed());
         }
@@ -33,7 +33,7 @@ public class TraderBeeRandomFlyGoal extends Goal {
             return false;
         }
         if (!movementcontroller.hasWanted() || target == null) {
-            target = getBlockInViewBeehemoth();
+            target = getBlockInViewTraderBee();
             if (target != null) {
                 traderBeeEntityEntity.getMoveControl().setWantedPosition(target.getX() + 0.5D, target.getY() + 0.5D, target.getZ() + 0.5D, traderBeeEntityEntity.getFlyingSpeed());
             }
@@ -52,7 +52,7 @@ public class TraderBeeRandomFlyGoal extends Goal {
 
     public void tick() {
         if (target == null) {
-            target = getBlockInViewBeehemoth();
+            target = getBlockInViewTraderBee();
         }
         if (target != null) {
             double distance = traderBeeEntityEntity.distanceToSqr(Vec3.atCenterOf(target));
@@ -66,7 +66,7 @@ public class TraderBeeRandomFlyGoal extends Goal {
         }
     }
 
-    public BlockPos getBlockInViewBeehemoth() {
+    public BlockPos getBlockInViewTraderBee() {
         float radius = 3 + traderBeeEntityEntity.getRandom().nextInt(6);
         float neg = traderBeeEntityEntity.getRandom().nextBoolean() ? 1 : -1;
         float renderYawOffset = traderBeeEntityEntity.yBodyRot;
