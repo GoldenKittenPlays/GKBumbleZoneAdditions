@@ -17,7 +17,7 @@ public class TraderBeeRenderer extends MobRenderer<TraderBeeEntity, TraderBeeMod
     }
 
     @Override
-    public @NotNull ResourceLocation getTextureLocation(TraderBeeEntity p_114482_) {
+    public @NotNull ResourceLocation getTextureLocation(@NotNull TraderBeeEntity p_114482_) {
         return TEXTURES[0];
     }
 }

@@ -5,13 +5,22 @@ import com.telepathicgrunt.the_bumblezone.mixin.entities.PlayerAdvancementsAcces
 import com.telepathicgrunt.the_bumblezone.modinit.BzCriterias;
 import com.telepathicgrunt.the_bumblezone.modinit.BzItems;
 import com.telepathicgrunt.the_bumblezone.modinit.BzTags;
+import me.goldenkitten.gkbumblezoneadditions.GKBumbleZoneAdditions;
 import me.goldenkitten.gkbumblezoneadditions.entity.goals.TraderBeeRandomFlyGoal;
 import me.goldenkitten.gkbumblezoneadditions.entity.goals.TraderBeeTemptGoal;
 import me.goldenkitten.gkbumblezoneadditions.sound.ModSounds;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementProgress;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Mth;
+import net.minecraft.world.SimpleMenuProvider;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -20,6 +29,7 @@ import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.MerchantMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -31,6 +41,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.Map;
+import java.util.OptionalInt;
 
 public class TraderBeeEntity extends BeehemothEntity implements Merchant {
     @Nullable
@@ -49,6 +60,67 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant {
         this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 60));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(5, new FloatGoal(this));
+    }
+
+    public boolean isTrading() {
+        return this.tradingPlayer != null;
+    }
+
+    public void openTradingScreen(Player player, @NotNull Component displayName, int friendshipLevel) {
+        OptionalInt optionalint = player.openMenu(new SimpleMenuProvider((p_45298_, p_45299_, p_45300_) -> new MerchantMenu(p_45298_, p_45299_, this), displayName));
+        if (optionalint.isPresent()) {
+            MerchantOffers merchantoffers = this.getOffers();
+            if (!merchantoffers.isEmpty()) {
+                player.sendMerchantOffers(optionalint.getAsInt(), merchantoffers, friendshipLevel, this.getVillagerXp(), this.showProgressBar(), this.canRestock());
+            }
+        }
+    }
+
+    public void startTrading(Player player) {
+        this.updateSpecialPrices(player);
+        this.setTradingPlayer(player);
+        this.openTradingScreen(player, this.getDisplayName(), this.getFriendship());
+    }
+
+    private void updateSpecialPrices(Player player) {
+        int i = this.getFriendship();
+        if (i != 0) {
+            for(MerchantOffer merchantoffer : this.getOffers()) {
+                merchantoffer.addToSpecialPriceDiff(-Mth.floor((float)i * merchantoffer.getPriceMultiplier()));
+            }
+        }
+
+        if (player.hasEffect(MobEffects.HERO_OF_THE_VILLAGE)) {
+            MobEffectInstance mobeffectinstance = player.getEffect(MobEffects.HERO_OF_THE_VILLAGE);
+            assert mobeffectinstance != null;
+            int k = mobeffectinstance.getAmplifier();
+            for(MerchantOffer merchantoffer : this.getOffers()) {
+                double d0 = 0.3D + 0.0625D * (double)k;
+                int j = (int)Math.floor(d0 * (double)merchantoffer.getBaseCostA().getCount());
+                merchantoffer.addToSpecialPriceDiff(-Math.max(j, 1));
+            }
+        }
+
+    }
+
+    public MerchantOffers generateTradesForPlayer(ServerPlayer serverPlayer) {
+        ItemStack itemstack = new ItemStack(Items.ENCHANTED_GOLDEN_APPLE, 1);
+        Advancement advancement = serverPlayer.createCommandSourceStack().getAdvancement(BzCriterias.QUEENS_DESIRE_FINAL_ADVANCEMENT);
+        Map<Advancement, AdvancementProgress> advancementsProgressMap = ((PlayerAdvancementsAccessor)serverPlayer.getAdvancements()).getProgress();
+        this.offers = new MerchantOffers();
+        setFriendshipForAdvancement(100);
+        if (advancement != null && advancementsProgressMap.containsKey(advancement) && advancementsProgressMap.get(advancement).isDone()) {
+            this.offers.add(new MerchantOffer(itemstack, new ItemStack(BzItems.ROYAL_JELLY_BOTTLE.get()), 1, getFriendship(), getFriendship()));
+            GKBumbleZoneAdditions.LOGGER.debug("You are awesome!");
+            return this.offers;
+        }
+        return new MerchantOffers();
+    }
+
+    public void setFriendshipForAdvancement(Integer awardedFriendship) {
+        if (this.getFriendship() <= awardedFriendship) {
+            this.setFriendship(awardedFriendship);
+        }
     }
 
     public static AttributeSupplier.Builder getAttributeBuilder() {
@@ -96,6 +168,11 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant {
     }
 
     @Override
+    public void equipSaddle(@org.jetbrains.annotations.Nullable SoundSource p_21748_) {
+
+    }
+
+    @Override
     public void setSaddled(boolean saddled) {
         super.setSaddled(false);
     }
@@ -130,18 +207,13 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant {
 
     @Override
     public @NotNull MerchantOffers getOffers() {
-        ItemStack itemstack = new ItemStack(BzItems.ROYAL_JELLY_BOTTLE.get(), 1);
-
-        ServerPlayer serverPlayer = ((ServerPlayer)this.tradingPlayer);
-        assert serverPlayer != null;
-        Advancement advancement = serverPlayer.server.getAdvancements().getAdvancement(BzCriterias.QUEENS_DESIRE_FINAL_ADVANCEMENT);
-        Map<Advancement, AdvancementProgress> advancementsProgressMap = ((PlayerAdvancementsAccessor)serverPlayer.getAdvancements()).getProgress();
-        this.offers = new MerchantOffers();
-        if (advancement != null && advancementsProgressMap.containsKey(advancement) && advancementsProgressMap.get(advancement).isDone()) {
-            this.offers.add(new MerchantOffer(itemstack, new ItemStack(Items.ENCHANTED_GOLDEN_APPLE), 1, getFriendship(), getFriendship()));
-            return this.offers;
-        }
+        assert this.offers != null;
         return this.offers;
+    }
+
+    @Override
+    public void setFriendship(Integer newFriendship) {
+        super.setFriendship(newFriendship);
     }
 
     @Override
@@ -151,7 +223,7 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant {
 
     @Override
     public void overrideOffers(@NotNull MerchantOffers newOffers) {
-
+        this.offers = newOffers;
     }
 
     @Override
@@ -187,5 +259,16 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant {
     @Override
     public boolean isClientSide() {
         return false;
+    }
+
+    @org.jetbrains.annotations.Nullable
+    @Override
+    public AgeableMob getBreedOffspring(@NotNull ServerLevel sLevel, @NotNull AgeableMob mob) {
+        return null;
+    }
+
+    @Override
+    public boolean isFlying() {
+        return !this.onGround();
     }
 }
