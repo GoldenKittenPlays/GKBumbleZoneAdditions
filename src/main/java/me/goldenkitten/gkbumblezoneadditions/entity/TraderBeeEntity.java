@@ -3,6 +3,7 @@ package me.goldenkitten.gkbumblezoneadditions.entity;
 import com.telepathicgrunt.the_bumblezone.entities.mobs.BeehemothEntity;
 import com.telepathicgrunt.the_bumblezone.mixin.entities.PlayerAdvancementsAccessor;
 import com.telepathicgrunt.the_bumblezone.modinit.BzCriterias;
+import com.telepathicgrunt.the_bumblezone.modinit.BzEffects;
 import com.telepathicgrunt.the_bumblezone.modinit.BzItems;
 import com.telepathicgrunt.the_bumblezone.modinit.BzTags;
 import me.goldenkitten.gkbumblezoneadditions.GKBumbleZoneAdditions;
@@ -19,7 +20,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -89,9 +89,8 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant {
                 merchantoffer.addToSpecialPriceDiff(-Mth.floor((float)i * merchantoffer.getPriceMultiplier()));
             }
         }
-
-        if (player.hasEffect(MobEffects.HERO_OF_THE_VILLAGE)) {
-            MobEffectInstance mobeffectinstance = player.getEffect(MobEffects.HERO_OF_THE_VILLAGE);
+        if (player.hasEffect(BzEffects.PROTECTION_OF_THE_HIVE.get())) {
+            MobEffectInstance mobeffectinstance = player.getEffect(BzEffects.PROTECTION_OF_THE_HIVE.get());
             assert mobeffectinstance != null;
             int k = mobeffectinstance.getAmplifier();
             for(MerchantOffer merchantoffer : this.getOffers()) {
@@ -196,6 +195,7 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant {
     }
 
     protected void stopTrading() {
+        this.playSound(this.getNotifyTradeSound());
         this.setTradingPlayerForTrade(null);
     }
 
