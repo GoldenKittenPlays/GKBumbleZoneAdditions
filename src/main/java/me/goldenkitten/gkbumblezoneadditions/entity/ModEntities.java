@@ -13,8 +13,8 @@ public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, GKBumbleZoneAdditions.MODID);
 
-    public static final RegistryObject<EntityType<TraderBeeEntity>> TRADER_BEE =
-            ENTITY_TYPES.register("trader_bee", () -> PlatformHooks.createEntityType(TraderBeeEntity::new, MobCategory.CREATURE, 1.2F, false, 16, 3, "trader_bee"));
+    public static final RegistryObject<EntityType<TraderBeeEntity>> BUMBLE_TRADER =
+            ENTITY_TYPES.register("bumble_trader", () -> PlatformHooks.createEntityType(TraderBeeEntity::new, MobCategory.CREATURE, 1.2F, false, 16, 3, "bumble_trader"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

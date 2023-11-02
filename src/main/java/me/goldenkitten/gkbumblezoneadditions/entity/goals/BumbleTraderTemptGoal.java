@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
 
-public class TraderBeeTemptGoal extends Goal {
+public class BumbleTraderTemptGoal extends Goal {
     private static final TargetingConditions TEMP_TARGETING = TargetingConditions.forNonCombat().range(10.0).ignoreLineOfSight();
     private final TargetingConditions targetingConditions;
     protected final TraderBeeEntity mob;
@@ -19,7 +19,7 @@ public class TraderBeeTemptGoal extends Goal {
     protected Player player;
     private final Ingredient items;
 
-    public TraderBeeTemptGoal(TraderBeeEntity pathfinderMob, double speedModifier, Ingredient ingredient) {
+    public BumbleTraderTemptGoal(TraderBeeEntity pathfinderMob, double speedModifier, Ingredient ingredient) {
         this.mob = pathfinderMob;
         this.speedModifier = speedModifier;
         this.items = ingredient;

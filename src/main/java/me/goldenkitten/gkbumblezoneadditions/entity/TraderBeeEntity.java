@@ -6,9 +6,8 @@ import com.telepathicgrunt.the_bumblezone.modinit.BzCriterias;
 import com.telepathicgrunt.the_bumblezone.modinit.BzEffects;
 import com.telepathicgrunt.the_bumblezone.modinit.BzItems;
 import com.telepathicgrunt.the_bumblezone.modinit.BzTags;
-import me.goldenkitten.gkbumblezoneadditions.GKBumbleZoneAdditions;
-import me.goldenkitten.gkbumblezoneadditions.entity.goals.TraderBeeRandomFlyGoal;
-import me.goldenkitten.gkbumblezoneadditions.entity.goals.TraderBeeTemptGoal;
+import me.goldenkitten.gkbumblezoneadditions.entity.goals.BumbleTraderRandomFlyGoal;
+import me.goldenkitten.gkbumblezoneadditions.entity.goals.BumbleTraderTemptGoal;
 import me.goldenkitten.gkbumblezoneadditions.sound.ModSounds;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementProgress;
@@ -18,6 +17,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
+import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.AgeableMob;
@@ -37,6 +37,7 @@ import net.minecraft.world.item.trading.Merchant;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.item.trading.MerchantOffers;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.scores.PlayerTeam;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -48,15 +49,18 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant {
     protected MerchantOffers offers;
     @Nullable
     protected Player tradingPlayer;
+
+    @Nullable
+    protected MenuProvider currentTradeMenu;
     public TraderBeeEntity(EntityType<? extends BeehemothEntity> type, Level world) {
         super(type, world);
     }
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(1, new TraderBeeTemptGoal(this, 0.012D, Ingredient.of(BzTags.BEEHEMOTH_FAST_LURING_DESIRED_ITEMS)));
-        this.goalSelector.addGoal(2, new TraderBeeTemptGoal(this, 0.006D, Ingredient.of(BzTags.BEEHEMOTH_DESIRED_ITEMS)));
-        this.goalSelector.addGoal(3, new TraderBeeRandomFlyGoal(this));
+        this.goalSelector.addGoal(1, new BumbleTraderTemptGoal(this, 0.012D, Ingredient.of(BzTags.BEEHEMOTH_FAST_LURING_DESIRED_ITEMS)));
+        this.goalSelector.addGoal(2, new BumbleTraderTemptGoal(this, 0.006D, Ingredient.of(BzTags.BEEHEMOTH_DESIRED_ITEMS)));
+        this.goalSelector.addGoal(3, new BumbleTraderRandomFlyGoal(this));
         this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 60));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(5, new FloatGoal(this));
@@ -67,13 +71,19 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant {
     }
 
     public void openTradingScreen(Player player, @NotNull Component displayName, int friendshipLevel) {
-        OptionalInt optionalint = player.openMenu(new SimpleMenuProvider((p_45298_, p_45299_, p_45300_) -> new MerchantMenu(p_45298_, p_45299_, this), displayName));
+        currentTradeMenu = new SimpleMenuProvider((p_45298_, p_45299_, p_45300_) -> new MerchantMenu(p_45298_, p_45299_, this), displayName);
+        OptionalInt optionalint = player.openMenu(currentTradeMenu);
         if (optionalint.isPresent()) {
             MerchantOffers merchantoffers = this.getOffers();
             if (!merchantoffers.isEmpty()) {
                 player.sendMerchantOffers(optionalint.getAsInt(), merchantoffers, friendshipLevel, this.getVillagerXp(), this.showProgressBar(), this.canRestock());
             }
         }
+    }
+
+    @Override
+    public @NotNull Component getDisplayName() {
+        return PlayerTeam.formatNameForTeam(this.getTeam(), this.getName()).withStyle((p_185975_) -> p_185975_.withHoverEvent(this.createHoverEvent()).withInsertion("Bumble Trader"));
     }
 
     public void startTrading(Player player) {
@@ -102,14 +112,13 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant {
     }
 
     public MerchantOffers generateTradesForPlayer(ServerPlayer serverPlayer) {
-        ItemStack itemstack = new ItemStack(Items.ENCHANTED_GOLDEN_APPLE, 1);
+        ItemStack buyItemstack = new ItemStack(Items.ENCHANTED_GOLDEN_APPLE, 1);
         Advancement advancement = serverPlayer.createCommandSourceStack().getAdvancement(BzCriterias.QUEENS_DESIRE_FINAL_ADVANCEMENT);
         Map<Advancement, AdvancementProgress> advancementsProgressMap = ((PlayerAdvancementsAccessor)serverPlayer.getAdvancements()).getProgress();
         this.offers = new MerchantOffers();
         setFriendshipForAdvancement(100);
         if (advancement != null && advancementsProgressMap.containsKey(advancement) && advancementsProgressMap.get(advancement).isDone()) {
-            this.offers.add(new MerchantOffer(itemstack, new ItemStack(BzItems.ROYAL_JELLY_BOTTLE.get()), 1, getFriendship(), getFriendship()));
-            GKBumbleZoneAdditions.LOGGER.debug("You are awesome!");
+            this.offers.add(new MerchantOffer(buyItemstack, new ItemStack(BzItems.ROYAL_JELLY_BOTTLE.get()), 1, getFriendship(), getFriendship()));
             return this.offers;
         }
         return new MerchantOffers();

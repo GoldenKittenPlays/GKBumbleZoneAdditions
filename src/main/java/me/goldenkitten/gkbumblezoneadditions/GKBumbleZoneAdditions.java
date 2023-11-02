@@ -55,7 +55,7 @@ public class GKBumbleZoneAdditions {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            EntityRenderers.register(ModEntities.TRADER_BEE.get(), TraderBeeRenderer::new);
+            EntityRenderers.register(ModEntities.BUMBLE_TRADER.get(), TraderBeeRenderer::new);
             //MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
         }
     }
