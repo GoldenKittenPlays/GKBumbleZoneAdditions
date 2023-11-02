@@ -99,7 +99,6 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant {
                 merchantoffer.addToSpecialPriceDiff(-Math.max(j, 1));
             }
         }
-
     }
 
     public MerchantOffers generateTradesForPlayer(ServerPlayer serverPlayer) {
