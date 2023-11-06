@@ -5,12 +5,14 @@ import com.telepathicgrunt.the_bumblezone.modinit.BzItems;
 import me.goldenkitten.gkbumblezoneadditions.GKBumbleZoneAdditions;
 import me.goldenkitten.gkbumblezoneadditions.entity.ModEntities;
 import me.goldenkitten.gkbumblezoneadditions.entity.TraderBeeEntity;
+import me.goldenkitten.gkbumblezoneadditions.handlers.PacketHandler;
+import me.goldenkitten.gkbumblezoneadditions.packets.InventoryPacket;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.MerchantScreen;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.monster.Skeleton;
-import net.minecraft.world.entity.monster.Spider;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.MerchantMenu;
 import net.minecraft.world.inventory.Slot;
@@ -32,26 +34,58 @@ import java.util.List;
 
 @Mod.EventBusSubscriber(modid = GKBumbleZoneAdditions.MODID)
 public class ModEvents {
+
+    public void setInventoryAfterTrade(ItemStack item1, ItemStack item2, Player player, MerchantMenu menu) {
+        int count = 0;
+        Inventory inv = player.getInventory();
+        if (item1.is(Items.ENCHANTED_GOLDEN_APPLE)) {
+            count += item1.getCount();
+        }
+        if (item2.is(Items.ENCHANTED_GOLDEN_APPLE)) {
+            count += item2.getCount();
+        }
+        inv.removeItem(new ItemStack(BzItems.ROYAL_JELLY_BOTTLE.get(), count));
+        inv.setChanged();
+        inv.add(new ItemStack(Items.ENCHANTED_GOLDEN_APPLE, count));
+        inv.setChanged();
+        PacketHandler.sendToServer(new InventoryPacket(menu.containerId, menu.getStateId(), inv.items, Items.AIR.getDefaultInstance()));//menu.getCarried()));
+    }
+
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onMobDeath(LivingDeathEvent event) {
-        if((event.getEntity() instanceof Spider || event.getEntity() instanceof TraderBeeEntity) && event.getSource().getEntity() instanceof Skeleton) {
+        if((event.getEntity() instanceof TraderBeeEntity) && event.getSource().getEntity() instanceof Skeleton) {
             Item item = BzItems.MUSIC_DISC_FLIGHT_OF_THE_BUMBLEBEE_RIMSKY_KORSAKOV.get();
             event.getEntity().spawnAtLocation(item);
         }
     }
 
     @SubscribeEvent
-    public void playerTradedEvent(ScreenEvent event) {
+    public void playerTradedEvent(ScreenEvent.MouseButtonPressed event) {
+        if (!event.getScreen().getTitle().getString().equals("Bumble Trader")) {
+            return;
+        }
         if (Screen.hasShiftDown()) {
-            if (event.getScreen().getTitle().getString().equals("Bumble Trader")) {
-                MerchantScreen screen = (MerchantScreen) event.getScreen();
-                MerchantMenu menu = screen.getMenu();
-                if (menu.getSlot(0).getItem().is(Items.ENCHANTED_GOLDEN_APPLE) || menu.getSlot(1).getItem().is(Items.ENCHANTED_GOLDEN_APPLE)) {
-                    Slot clickedSlot = menu.getSlot(2);
-                    if (clickedSlot.getItem().is(BzItems.ROYAL_JELLY_BOTTLE.get())) {
-                        if (event.getScreen().isMouseOver(clickedSlot.x, clickedSlot.y)) {
-                            if (screen.mouseClicked(clickedSlot.x, clickedSlot.y, InputConstants.MOUSE_BUTTON_LEFT)) {
-                                GKBumbleZoneAdditions.LOGGER.debug("Meow I am but a Bumble Trader!");
+            MerchantScreen screen = (MerchantScreen) event.getScreen();
+            MerchantMenu menu = screen.getMenu();
+            ItemStack item1 = menu.getSlot(0).getItem();
+            ItemStack item2 = menu.getSlot(1).getItem();
+            if (item1.is(Items.ENCHANTED_GOLDEN_APPLE) || item2.is(Items.ENCHANTED_GOLDEN_APPLE)) {
+                Slot clickedSlot = menu.getSlot(2);
+                if (clickedSlot.getItem().is(BzItems.ROYAL_JELLY_BOTTLE.get())) {
+                    if (clickedSlot == screen.getSlotUnderMouse()) {
+                        if (screen.mouseClicked(clickedSlot.x, clickedSlot.y, InputConstants.MOUSE_BUTTON_LEFT)) {
+                            if (event.getButton() == 0) {
+                                Player player = screen.getMinecraft().player;
+                                if (player != null) {
+                                    if ((item1.getCount() < 2 && item2.is(Items.AIR))
+                                        || (item2.getCount() < 2 && item1.is(Items.AIR)))
+                                    {
+                                        GKBumbleZoneAdditions.LOGGER.debug("Meow I am but a Bumble Trader!");
+                                    }
+                                    else {
+                                        setInventoryAfterTrade(item1, item2, player, menu);
+                                    }
+                                }
                             }
                         }
                     }

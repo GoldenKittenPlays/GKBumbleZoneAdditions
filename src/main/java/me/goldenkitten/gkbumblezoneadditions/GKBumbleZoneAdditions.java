@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import me.goldenkitten.gkbumblezoneadditions.client.TraderBeeRenderer;
 import me.goldenkitten.gkbumblezoneadditions.entity.ModEntities;
 import me.goldenkitten.gkbumblezoneadditions.events.ModEvents;
+import me.goldenkitten.gkbumblezoneadditions.handlers.PacketHandler;
 import me.goldenkitten.gkbumblezoneadditions.sound.ModSounds;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
@@ -40,7 +41,7 @@ public class GKBumbleZoneAdditions {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-
+            PacketHandler.register();
         });
     }
 
