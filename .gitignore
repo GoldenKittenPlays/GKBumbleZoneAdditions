@@ -14110,3 +14110,16 @@
 /run/
 /run/crash-reports/
 /run/logs/
+/build/classes/java/main/me/goldenkitten/gkbumblezoneadditions/entity/goals/BumbleTraderTemptGoal.class
+/build/classes/java/main/me/goldenkitten/gkbumblezoneadditions/entity/goals/BumbleTraderRandomFlyGoal.class
+/build/tmp/compileJava/compileTransaction/stash-dir/GKBumbleZoneAdditions.class.uniqueId2
+/build/classes/java/main/me/goldenkitten/gkbumblezoneadditions/handlers/PacketHandler.class
+/run-data/logs/latest.log
+/build/_RenameSrg2Mcp_313103970/log.txt
+/build/classes/java/main/me/goldenkitten/gkbumblezoneadditions/packets/InventoryPacket.class
+/build/tmp/compileJava/compileTransaction/stash-dir/GKBumbleZoneAdditions$ClientModEvents.class.uniqueId0
+/run-data/config/fml.toml
+/.idea/uiDesigner.xml
+/build/_RenameSrg2Mcp_-2099127624/log.txt
+/build/tmp/compileJava/compileTransaction/stash-dir/ModEvents.class.uniqueId1
+/run-data/logs/debug.log
