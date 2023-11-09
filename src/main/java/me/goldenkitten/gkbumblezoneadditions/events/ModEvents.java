@@ -58,7 +58,7 @@ public class ModEvents {
         };
 
         Timer timer = new Timer("Timer");
-        timer.schedule(task, 200L);
+        timer.schedule(task, 50L);
     }
     public void setInventoryAfterTrade(ItemStack item1, ItemStack item2, Player player, MerchantMenu menu) {
         int count = 0;
