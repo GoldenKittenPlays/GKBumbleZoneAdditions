@@ -15,30 +15,30 @@ public class InventoryPacket {
     private final List<ItemStack> items;
     private final ItemStack carriedItem;
 
-    public InventoryPacket(int p_182704_, int p_182705_, NonNullList<ItemStack> p_182706_, ItemStack p_182707_) {
-        this.containerId = p_182704_;
-        this.stateId = p_182705_;
-        this.items = NonNullList.withSize(p_182706_.size(), ItemStack.EMPTY);
+    public InventoryPacket(int idOfContainer, int idOfState, NonNullList<ItemStack> invItems, ItemStack itemCarried) {
+        this.containerId = idOfContainer;
+        this.stateId = idOfState;
+        this.items = NonNullList.withSize(invItems.size(), ItemStack.EMPTY);
 
-        for(int i = 0; i < p_182706_.size(); ++i) {
-            this.items.set(i, p_182706_.get(i).copy());
+        for(int i = 0; i < invItems.size(); ++i) {
+            this.items.set(i, invItems.get(i).copy());
         }
 
-        this.carriedItem = p_182707_.copy();
+        this.carriedItem = itemCarried.copy();
     }
 
-    public InventoryPacket(FriendlyByteBuf p_178823_) {
-        this.containerId = p_178823_.readUnsignedByte();
-        this.stateId = p_178823_.readVarInt();
-        this.items = p_178823_.readCollection(NonNullList::createWithCapacity, FriendlyByteBuf::readItem);
-        this.carriedItem = p_178823_.readItem();
+    public InventoryPacket(FriendlyByteBuf sentBytes) {
+        this.containerId = sentBytes.readUnsignedByte();
+        this.stateId = sentBytes.readVarInt();
+        this.items = sentBytes.readCollection(NonNullList::createWithCapacity, FriendlyByteBuf::readItem);
+        this.carriedItem = sentBytes.readItem();
     }
 
-    public void write(FriendlyByteBuf p_131956_) {
-        p_131956_.writeByte(this.containerId);
-        p_131956_.writeVarInt(this.stateId);
-        p_131956_.writeCollection(this.items, FriendlyByteBuf::writeItem);
-        p_131956_.writeItem(this.carriedItem);
+    public void write(FriendlyByteBuf bytesToWrite) {
+        bytesToWrite.writeByte(this.containerId);
+        bytesToWrite.writeVarInt(this.stateId);
+        bytesToWrite.writeCollection(this.items, FriendlyByteBuf::writeItem);
+        bytesToWrite.writeItem(this.carriedItem);
     }
 
     public void handle(Supplier<NetworkEvent.Context> netContext) {

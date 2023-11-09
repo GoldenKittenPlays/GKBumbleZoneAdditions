@@ -31,10 +31,35 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 @Mod.EventBusSubscriber(modid = GKBumbleZoneAdditions.MODID)
 public class ModEvents {
+    public void runRemovalItemTask(int count, Player player, MerchantMenu menu) {
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                int origCount = count;
+                Inventory inv = player.getInventory();
+                for (ItemStack stack : inv.items) {
+                    if (stack.is(BzItems.ROYAL_JELLY_BOTTLE.get())) {
+                        if (stack.getCount() <= origCount) {
+                            int prevCount = stack.getCount();
+                            stack.grow(-origCount);
+                            origCount -= prevCount;
+                        }
+                    }
+                }
+                inv.setChanged();
+                InventoryPacket packet = new InventoryPacket(menu.containerId, menu.getStateId(), inv.items, Items.AIR.getDefaultInstance());
+                PacketHandler.sendToServer(packet);
+            }
+        };
 
+        Timer timer = new Timer("Timer");
+        timer.schedule(task, 200L);
+    }
     public void setInventoryAfterTrade(ItemStack item1, ItemStack item2, Player player, MerchantMenu menu) {
         int count = 0;
         Inventory inv = player.getInventory();
@@ -44,11 +69,10 @@ public class ModEvents {
         if (item2.is(Items.ENCHANTED_GOLDEN_APPLE)) {
             count += item2.getCount();
         }
-        inv.removeItem(new ItemStack(BzItems.ROYAL_JELLY_BOTTLE.get(), count));
-        inv.setChanged();
         inv.add(new ItemStack(Items.ENCHANTED_GOLDEN_APPLE, count));
         inv.setChanged();
         PacketHandler.sendToServer(new InventoryPacket(menu.containerId, menu.getStateId(), inv.items, Items.AIR.getDefaultInstance()));//menu.getCarried()));
+        runRemovalItemTask(count, player, menu);
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
