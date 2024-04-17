@@ -5,9 +5,9 @@ import me.goldenkitten.gkbumblezoneadditions.client.TraderBeeRenderer;
 import me.goldenkitten.gkbumblezoneadditions.entity.ModEntities;
 import me.goldenkitten.gkbumblezoneadditions.events.ModEvents;
 import me.goldenkitten.gkbumblezoneadditions.handlers.PacketHandler;
+import me.goldenkitten.gkbumblezoneadditions.items.ModItems;
 import me.goldenkitten.gkbumblezoneadditions.sound.ModSounds;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -30,6 +30,7 @@ public class GKBumbleZoneAdditions {
     public GKBumbleZoneAdditions() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.ITEMS.init();
         ModSounds.register(modEventBus);
         ModEntities.register(modEventBus);
 
@@ -40,9 +41,7 @@ public class GKBumbleZoneAdditions {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> {
-            PacketHandler.register();
-        });
+        event.enqueueWork(PacketHandler::register);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -52,7 +51,7 @@ public class GKBumbleZoneAdditions {
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {

@@ -1,4 +1,6 @@
 {
-  "sounds.gkbumblezoneadditions.bumble_trader_trade_accepted": "Trader Bee Trade Accepted",
-  "entity.gkbumblezoneadditions.bumble_trader": "Bumble Trader"
+  "sounds.gkbumblezoneadditions.bumble_trader_trade_accepted": "Bumble Trader Trade Accepted",
+  "entity.gkbumblezoneadditions.bumble_trader": "Bumble Trader",
+  "item.gkbumblezoneadditions.bumble_trader_spawn_egg": "Bumble Trader Spawn Egg",
+  "item.gkbumblezoneadditions.bumble_trader_treat": "Bumble Trader Treat"
 }

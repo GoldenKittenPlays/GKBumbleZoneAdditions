@@ -10,7 +10,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
 
-public class BumbleTraderTemptGoal extends Goal {
+public class BumbleTraderTemptGoal extends Goal
+{
     private static final TargetingConditions TEMP_TARGETING = TargetingConditions.forNonCombat().range(10.0).ignoreLineOfSight();
     private final TargetingConditions targetingConditions;
     protected final TraderBeeEntity mob;
@@ -19,7 +20,8 @@ public class BumbleTraderTemptGoal extends Goal {
     protected Player player;
     private final Ingredient items;
 
-    public BumbleTraderTemptGoal(TraderBeeEntity pathfinderMob, double speedModifier, Ingredient ingredient) {
+    public BumbleTraderTemptGoal(TraderBeeEntity pathfinderMob, double speedModifier, Ingredient ingredient)
+    {
         this.mob = pathfinderMob;
         this.speedModifier = speedModifier;
         this.items = ingredient;
@@ -28,38 +30,46 @@ public class BumbleTraderTemptGoal extends Goal {
     }
 
     @Override
-    public boolean canUse() {
+    public boolean canUse()
+    {
         return false;
     }
 
-    private boolean shouldFollow(LivingEntity livingEntity) {
+    private boolean shouldFollow(LivingEntity livingEntity)
+    {
         return this.items.test(livingEntity.getMainHandItem()) || this.items.test(livingEntity.getOffhandItem());
     }
 
     @Override
-    public boolean canContinueToUse() {
+    public boolean canContinueToUse()
+    {
         return this.canUse();
     }
 
     @Override
-    public void stop() {
+    public void stop()
+    {
         this.player = null;
         this.mob.getNavigation().stop();
     }
 
     @Override
-    public void tick() {
+    public void tick()
+    {
         assert this.player != null;
         this.mob.getLookControl().setLookAt(this.player, (float)(this.mob.getMaxHeadYRot() + 20), (float)this.mob.getMaxHeadXRot());
-        if (this.mob.distanceToSqr(this.player) < 6.25) {
+        if (this.mob.distanceToSqr(this.player) < 6.25)
+        {
             this.mob.getNavigation().stop();
         }
-        else {
+        else
+        {
             this.mob.getNavigation().moveTo(this.player, this.speedModifier * (1));
         }
     }
 
-    public TargetingConditions getTargetingConditions() {
+    public TargetingConditions getTargetingConditions()
+    {
         return targetingConditions;
     }
 }

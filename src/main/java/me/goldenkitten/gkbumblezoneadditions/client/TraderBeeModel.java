@@ -15,7 +15,8 @@ import net.minecraft.util.Mth;
 // Made with Blockbench 4.0.0-beta.5
 // Exported for Minecraft version 1.17 with Mojang mappings
 
-public class TraderBeeModel extends EntityModel<TraderBeeEntity> {
+public class TraderBeeModel extends EntityModel<TraderBeeEntity>
+{
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Bumblezone.MODID, "trader_bee"), "main");
     private final ModelPart ROOT;
@@ -41,7 +42,8 @@ public class TraderBeeModel extends EntityModel<TraderBeeEntity> {
     protected final ModelPart FACE;
     protected final ModelPart ABDOMEN;
 
-    public TraderBeeModel(ModelPart modelPart) {
+    public TraderBeeModel(ModelPart modelPart)
+    {
         this.ROOT = modelPart.getChild("ROOT");
         this.FACE = this.ROOT.getChild("FACE");
         this.CROWN = this.FACE.getChild("CROWN");
@@ -66,7 +68,8 @@ public class TraderBeeModel extends EntityModel<TraderBeeEntity> {
         this.SADDLE = this.ROOT.getChild("SADDLE");
     }
 
-    public static LayerDefinition createBodyLayer() {
+    public static LayerDefinition createBodyLayer()
+    {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
 
@@ -134,20 +137,23 @@ public class TraderBeeModel extends EntityModel<TraderBeeEntity> {
         return LayerDefinition.create(meshdefinition, 64, 64);
     }
 
-    private float getSine(float time, float max, float min) {
+    private float getSine(float time, float max, float min)
+    {
         float so = Mth.sin(time * 0.25f);
         float range = max - min;
         return (so * range) + min;
     }
 
-    private float getCos(float time, float max, float min) {
+    private float getCos(float time, float max, float min)
+    {
         float so = Mth.cos(time * 0.25f);
         float range = max - min;
         return (so * range) + min;
     }
 
     @Override
-    public void setupAnim(TraderBeeEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(TraderBeeEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch)
+    {
         SADDLE.visible = entity.isSaddled();
         CROWN.visible = entity.isQueen();
         WING_RIGHT.xRot = 0.0f;
@@ -156,7 +162,8 @@ public class TraderBeeModel extends EntityModel<TraderBeeEntity> {
         boolean onGround = entity.onGround();
         boolean isSitting = entity.isInSittingPose();
         double xzSpeed = Math.abs(entity.getDeltaMovement().x()) + Math.abs(entity.getDeltaMovement().z());
-        if (onGround) {
+        if (onGround)
+        {
             WING_RIGHT.yRot = -0.2618f;
             WING_RIGHT.zRot = 0.0f;
             WING_LEFT.xRot = 0.0f;
@@ -169,7 +176,8 @@ public class TraderBeeModel extends EntityModel<TraderBeeEntity> {
             LEG_REARLEFT.xRot = 0.0f;
             LEG_REARRIGHT.xRot = 0.0f;
 
-            if(xzSpeed > 0.0000008D) {
+            if(xzSpeed > 0.0000008D)
+            {
                 KneeFrontRightCube_r1.yRot = getSine(ageInTicks + entity.offset1, 0.2f, 0.475f);
                 KneeMidRightCube_r1.yRot = getCos(ageInTicks + entity.offset2, 0.375f, 0.525f);
                 KneeRearRightCube_r1.yRot = getSine(ageInTicks + entity.offset3, 0.45f, 0.625f);
@@ -177,7 +185,8 @@ public class TraderBeeModel extends EntityModel<TraderBeeEntity> {
                 KneeMidLeftCube_r1.yRot = getCos(ageInTicks + entity.offset5, -0.375f, -0.525f);
                 KneeRearLeftCube_r1.yRot = getSine(ageInTicks + entity.offset6, -0.45f, -0.625f);
             }
-            else {
+            else
+            {
                 KneeFrontRightCube_r1.yRot = getSine(entity.offset1, 0.2f, 0.475f);
                 KneeMidRightCube_r1.yRot = getCos(entity.offset2, 0.375f, 0.525f);
                 KneeRearRightCube_r1.yRot = getSine(entity.offset3, 0.45f, 0.625f);
@@ -186,7 +195,8 @@ public class TraderBeeModel extends EntityModel<TraderBeeEntity> {
                 KneeRearLeftCube_r1.yRot = getSine(entity.offset6, -0.45f, -0.625f);
             }
 
-            if(xzSpeed > 0.03D) {
+            if(xzSpeed > 0.03D)
+            {
                 WING_RIGHT.yRot = 0.0f;
                 float wingSpeed = 0.75f;
                 WING_LEFT.zRot = ((float) (Mth.cos((limbSwing + ageInTicks) * 2.1f * wingSpeed) * Math.PI * 0.15f));
@@ -195,7 +205,8 @@ public class TraderBeeModel extends EntityModel<TraderBeeEntity> {
                 WING_RIGHT.zRot = -WING_LEFT.zRot;
             }
         }
-        else {
+        else
+        {
             WING_RIGHT.yRot = 0.0f;
             float wingSpeed = isSitting ? 0.75f : 1f;
             WING_LEFT.zRot = ((float) (Mth.cos((limbSwing + ageInTicks) * 2.1f * wingSpeed) * Math.PI * 0.15f));
@@ -229,7 +240,8 @@ public class TraderBeeModel extends EntityModel<TraderBeeEntity> {
         ROOT.zRot = 0.0F;
 
         float swayingMotion = Mth.sin(ageInTicks * 0.18F);
-        if(isSitting) {
+        if(isSitting)
+        {
             ANTENNA_LEFT.xRot = swayingMotion * (float) Math.PI * 0.002F;
             ANTENNA_RIGHT.xRot = swayingMotion * (float) Math.PI * 0.002F;
             ANTENNA_LEFT.z = -0.3F;
@@ -239,7 +251,8 @@ public class TraderBeeModel extends EntityModel<TraderBeeEntity> {
             ANTENNA_LEFT.xRot += 0.2F;
             ANTENNA_RIGHT.xRot += 0.2F;
         }
-        else {
+        else
+        {
             ANTENNA_LEFT.xRot = swayingMotion * (float) Math.PI * 0.005F;
             ANTENNA_RIGHT.xRot = swayingMotion * (float) Math.PI * 0.005F;
             ANTENNA_LEFT.z = 0.1F;
@@ -248,7 +261,8 @@ public class TraderBeeModel extends EntityModel<TraderBeeEntity> {
             ANTENNA_RIGHT.y = -1F;
         }
 
-        if (!onGround) {
+        if (!onGround)
+        {
             ROOT.xRot = 0.1F + swayingMotion * (float) Math.PI * 0.015F;
             ROOT.y = 19.0F - Mth.cos(ageInTicks * 0.18F) * 0.9F;
         }
@@ -260,7 +274,8 @@ public class TraderBeeModel extends EntityModel<TraderBeeEntity> {
 
 
     @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+    public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha)
+    {
         float scale = 1.6f;
         poseStack.scale(scale, scale, scale);
         poseStack.translate(0, -0.5, 0);

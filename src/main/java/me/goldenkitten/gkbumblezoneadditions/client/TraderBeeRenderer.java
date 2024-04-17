@@ -8,16 +8,20 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
-public class TraderBeeRenderer extends MobRenderer<TraderBeeEntity, TraderBeeModel> {
-    private static final ResourceLocation[] TEXTURES = new ResourceLocation[] {
+public class TraderBeeRenderer extends MobRenderer<TraderBeeEntity, TraderBeeModel>
+{
+    private static final ResourceLocation[] TEXTURES = new ResourceLocation[]
+            {
             new ResourceLocation(GKBumbleZoneAdditions.MODID, "textures/model/entity/trader_bee.png")
     };
-    public TraderBeeRenderer(EntityRendererProvider.Context context) {
+    public TraderBeeRenderer(EntityRendererProvider.Context context)
+    {
         super(context, new TraderBeeModel(context.bakeLayer(ModLayers.TRADER_BEE_LAYER)), 0.4f);
     }
 
     @Override
-    public @NotNull ResourceLocation getTextureLocation(@NotNull TraderBeeEntity p_114482_) {
+    public @NotNull ResourceLocation getTextureLocation(@NotNull TraderBeeEntity p_114482_)
+    {
         return TEXTURES[0];
     }
 }

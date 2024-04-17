@@ -18,7 +18,8 @@ public class PacketHandler {
             .simpleChannel();
     public static int packetId;
 
-    public static void register() {
+    public static void register()
+    {
         packetId = 0;
         INSTANCE.messageBuilder(InventoryPacket.class, packetId, NetworkDirection.PLAY_TO_SERVER)
                 .encoder(InventoryPacket::write)
@@ -27,17 +28,20 @@ public class PacketHandler {
                 .add();
     }
 
-    public static void sendToServer(Object msg) {
+    public static void sendToServer(Object msg)
+    {
         INSTANCE.send(PacketDistributor.SERVER.noArg(), msg);
         packetId++;
     }
 
-    public static void sendToPlayer(Object msg, ServerPlayer player) {
+    public static void sendToPlayer(Object msg, ServerPlayer player)
+    {
         INSTANCE.send(PacketDistributor.PLAYER.with(() -> player), msg);
         packetId++;
     }
 
-    public static void sendToAllClients(Object msg) {
+    public static void sendToAllClients(Object msg)
+    {
         INSTANCE.send(PacketDistributor.ALL.noArg(), msg);
         packetId++;
     }

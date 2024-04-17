@@ -11,11 +11,13 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.EnumSet;
 
-public class BumbleTraderRandomFlyGoal extends Goal {
+public class BumbleTraderRandomFlyGoal extends Goal
+{
     private final TraderBeeEntity traderBeeEntity;
     private BlockPos target = null;
 
-    public BumbleTraderRandomFlyGoal(TraderBeeEntity traderbeeEntity) {
+    public BumbleTraderRandomFlyGoal(TraderBeeEntity traderbeeEntity)
+    {
         this.traderBeeEntity = traderbeeEntity;
         this.setFlags(EnumSet.of(Goal.Flag.MOVE));
     }
