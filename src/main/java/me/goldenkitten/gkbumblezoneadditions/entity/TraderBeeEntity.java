@@ -8,6 +8,7 @@ import com.telepathicgrunt.the_bumblezone.modinit.BzItems;
 import com.telepathicgrunt.the_bumblezone.modinit.BzTags;
 import me.goldenkitten.gkbumblezoneadditions.entity.goals.BumbleTraderRandomFlyGoal;
 import me.goldenkitten.gkbumblezoneadditions.entity.goals.BumbleTraderTemptGoal;
+import me.goldenkitten.gkbumblezoneadditions.items.ModItems;
 import me.goldenkitten.gkbumblezoneadditions.sound.ModSounds;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementProgress;
@@ -35,7 +36,6 @@ import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.MerchantMenu;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.trading.Merchant;
 import net.minecraft.world.item.trading.MerchantOffer;
@@ -107,12 +107,10 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant
     public void addAdditionalSaveData(CompoundTag tag)
     {
         super.addAdditionalSaveData(tag);
-        if (getTradingPlayer() != null)
-        {
+        if (getTradingPlayer() != null) {
             tag.putUUID("player", getTradingPlayer().getUUID());
         }
-        else
-        {
+        else {
             tag.putUUID("player", UUID.randomUUID());
         }
     }
@@ -121,7 +119,12 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant
     public void readAdditionalSaveData(CompoundTag tag)
     {
         super.readAdditionalSaveData(tag);
-        setTradingPlayerForTrade(this.level().getPlayerByUUID(tag.getUUID("player")));
+        if (getTradingPlayer() != null) {
+            setTradingPlayer(this.level().getPlayerByUUID(tag.getUUID("player")));
+        }
+        else {
+            setTradingPlayer(null);
+        }
     }
 
     @Override
@@ -164,7 +167,7 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant
 
     public MerchantOffers generateTradesForPlayer(ServerPlayer serverPlayer)
     {
-        ItemStack buyItemstack = new ItemStack(Items.ENCHANTED_GOLDEN_APPLE, 1);
+        ItemStack buyItemstack = new ItemStack(ModItems.BUMBLE_TRADER_TREAT.get(), 1);
         Advancement advancement = serverPlayer.createCommandSourceStack().getAdvancement(BzCriterias.QUEENS_DESIRE_FINAL_ADVANCEMENT);
         Map<Advancement, AdvancementProgress> advancementsProgressMap = ((PlayerAdvancementsAccessor)serverPlayer.getAdvancements()).getProgress();
         this.offers = new MerchantOffers();
@@ -266,8 +269,8 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant
         }
         Optional<UUID> uuid = Optional.empty();
         UUID id = UUID.randomUUID();
-        if (!flag) {
-            assert playerTrading != null;
+        if (playerTrading != null)
+        {
             uuid = Optional.of(playerTrading.getUUID());
             id = playerTrading.getUUID();
         }
