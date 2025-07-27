@@ -1,0 +1,14 @@
+{
+  "bumble_trader_trade_accepted": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "gkbumblezoneadditions:bumble_trader_trade_accepted", "stream": false }
+    ]
+  },
+  "bumble_trader_trade_denied": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "gkbumblezoneadditions:bumble_trader_trade_denied", "stream": false }
+    ]
+  }
+}

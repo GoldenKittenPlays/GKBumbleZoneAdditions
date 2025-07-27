@@ -11,6 +11,7 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import org.jetbrains.annotations.NotNull;
 
 // Made with Blockbench 4.0.0-beta.5
 // Exported for Minecraft version 1.17 with Mojang mappings
@@ -274,7 +275,7 @@ public class TraderBeeModel extends EntityModel<TraderBeeEntity>
 
 
     @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha)
+    public void renderToBuffer(PoseStack poseStack, @NotNull VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha)
     {
         float scale = 1.6f;
         poseStack.scale(scale, scale, scale);

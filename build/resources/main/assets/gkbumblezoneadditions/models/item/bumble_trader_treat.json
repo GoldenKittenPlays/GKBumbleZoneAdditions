@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gkbumblezoneadditions:item/bumble_trader_treat"
+  }
+}

@@ -46,7 +46,7 @@ public class BumbleTraderTreatRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
-    public ItemStack getResultItem(RegistryAccess pRegistryAccess) {
+    public @NotNull ItemStack getResultItem(@NotNull RegistryAccess pRegistryAccess) {
         return output.copy();
     }
 
@@ -92,9 +92,7 @@ public class BumbleTraderTreatRecipe implements Recipe<SimpleContainer> {
         public @Nullable BumbleTraderTreatRecipe fromNetwork(@NotNull ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(pBuffer.readInt(), Ingredient.EMPTY);
 
-            for (int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromNetwork(pBuffer));
-            }
+            inputs.replaceAll(ignored -> Ingredient.fromNetwork(pBuffer));
 
             ItemStack output = pBuffer.readItem();
             return new BumbleTraderTreatRecipe(inputs, output, pRecipeId);
@@ -108,7 +106,7 @@ public class BumbleTraderTreatRecipe implements Recipe<SimpleContainer> {
                 ingredient.toNetwork(pBuffer);
             }
 
-            pBuffer.writeItemStack(pRecipe.getResultItem(null), false);
+            pBuffer.writeItemStack(pRecipe.getResultItem(RegistryAccess.EMPTY), false);
         }
     }
 }

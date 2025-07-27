@@ -10,6 +10,7 @@ import me.goldenkitten.gkbumblezoneadditions.entity.goals.BumbleTraderRandomFlyG
 import me.goldenkitten.gkbumblezoneadditions.entity.goals.BumbleTraderTemptGoal;
 import me.goldenkitten.gkbumblezoneadditions.items.ModItems;
 import me.goldenkitten.gkbumblezoneadditions.sound.ModSounds;
+import me.goldenkitten.gkbumblezoneadditions.utils.BumbleTradeTracker;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.nbt.CompoundTag;
@@ -82,16 +83,30 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant
         return this.tradingPlayer != null;
     }
 
-    public void openTradingScreen(Player player, @NotNull Component displayName, int friendshipLevel)
+    public void openTradingScreen(@NotNull Player player, @NotNull Component displayName, int friendshipLevel)
     {
-        currentTradeMenu = new SimpleMenuProvider((p_45298_, p_45299_, p_45300_) -> new MerchantMenu(p_45298_, p_45299_, this), displayName);
-        OptionalInt optionalint = player.openMenu(currentTradeMenu);
-        if (optionalint.isPresent())
-        {
-            MerchantOffers merchantoffers = this.getOffers();
-            if (!merchantoffers.isEmpty())
-            {
-                player.sendMerchantOffers(optionalint.getAsInt(), merchantoffers, friendshipLevel, this.getVillagerXp(), this.showProgressBar(), this.canRestock());
+        if (player instanceof ServerPlayer serverPlayer && !this.level().isClientSide()) {
+            UUID traderId = this.getUUID();
+            UUID playerId = serverPlayer.getUUID();
+            ServerLevel sLevel = serverPlayer.serverLevel();
+            BumbleTradeTracker tracker = BumbleTradeTracker.get(sLevel);
+            long currentTime = sLevel.getDayTime();
+
+            if (!tracker.canTrade(traderId, playerId, currentTime)) {
+                this.playSound(ModSounds.BUMBLE_TRADER_TRADE_DENIED.get());
+                serverPlayer.sendSystemMessage(Component.literal("You've already traded with this Bumble Trader today 🐝"));
+            }
+            else {
+                currentTradeMenu = new SimpleMenuProvider((p_45298_, p_45299_, p_45300_) -> new MerchantMenu(p_45298_, p_45299_, this), displayName);
+                OptionalInt optionalint = player.openMenu(currentTradeMenu);
+                if (optionalint.isPresent())
+                {
+                    MerchantOffers merchantoffers = this.getOffers();
+                    if (!merchantoffers.isEmpty())
+                    {
+                        player.sendMerchantOffers(optionalint.getAsInt(), merchantoffers, friendshipLevel, this.getVillagerXp(), this.showProgressBar(), this.canRestock());
+                    }
+                }
             }
         }
     }
@@ -138,7 +153,6 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant
         this.updateSpecialPrices(player);
         this.setTradingPlayer(player);
         this.openTradingScreen(player, this.getDisplayName(), this.getFriendship());
-
     }
 
     private void updateSpecialPrices(Player player)
@@ -324,7 +338,11 @@ public class TraderBeeEntity extends BeehemothEntity implements Merchant
     @Override
     public void notifyTrade(@NotNull MerchantOffer p_45305_)
     {
-
+        if (this.getTradingPlayer() instanceof ServerPlayer serverPlayer && !this.level().isClientSide()) {
+            BumbleTradeTracker tracker = BumbleTradeTracker.get(serverPlayer.serverLevel());
+            tracker.recordTrade(this.getUUID(), serverPlayer.getUUID(), serverPlayer.serverLevel().getDayTime());
+        }
+        this.playSound(this.getNotifyTradeSound());
     }
 
     @Override
